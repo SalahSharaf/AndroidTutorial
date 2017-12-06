@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Android Tutorial</string>
+    <string name="android_tutorial">Android Tutorial</string>
+    <string name="start">start</string>
+    <string name="Next">Next</string>
+    <string name="_0_of_9_questions_have_been_answered">0 of 9 questions have been answered</string>
+</resources>
