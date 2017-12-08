@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:padding="15dp"
+        android:id="@+id/Header">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/android_tutorial"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/colorPrimaryLight"
+        android:layout_below="@id/Header"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Next"
+            android:textSize="10sp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="previous"
+            android:textSize="10sp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
