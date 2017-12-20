@@ -4,4 +4,7 @@
     <color name="colorPrimary">#00bcd4</color>
     <color name="colorPrimaryDark">#008ba3</color>
     <color name="colorAccent">#ffffff</color>
+    <color name="quetionsBackground">#ad82c1b7</color>
+    <color name="AnswerRight">#4CAF50</color>
+    <color name="AnswerWrong">#F44336</color>
 </resources>

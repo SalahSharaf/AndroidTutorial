@@ -7,36 +7,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.RadioButton;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
-public class Question0 extends AppCompatActivity {
+public class Question6 extends AppCompatActivity {
 
-    public static boolean answer0, answer1, answer2, answer3;
+    public  static  boolean answer0, answer1, answer2, answer3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question0);
+        setContentView(R.layout.activity_question6);
         if (savedInstanceState != null) {
-            RadioButton[] rb = new RadioButton[]{findViewById(R.id.startActivityForResult),
-                    findViewById(R.id.startActivityToResult),
-                    findViewById(R.id.Bundle), findViewById(R.id.NoneOfTheAbove)};
+            CheckBox[] rb = new CheckBox[]{findViewById(R.id.layout_width),
+                    findViewById(R.id.padding),
+                    findViewById(R.id.layout_height), findViewById(R.id.text)};
             rb[0].setChecked(savedInstanceState.getBoolean("answer0"));
-            rb[0].setChecked(savedInstanceState.getBoolean("answer1"));
-            rb[0].setChecked(savedInstanceState.getBoolean("answer2"));
-            rb[0].setChecked(savedInstanceState.getBoolean("answer3"));
-            MainActivity.currentQuestion++;
+            rb[1].setChecked(savedInstanceState.getBoolean("answer1"));
+            rb[2].setChecked(savedInstanceState.getBoolean("answer2"));
+            rb[3].setChecked(savedInstanceState.getBoolean("answer3"));
         }
-        MainActivity.continueTest=true;
+        MainActivity.currentQuestion++;
+        MainActivity.btnEnabled[5] = true;
+    }
+    public void GoHome(View view) {
+        Intent activity = new Intent(this, MainActivity.class);
+        startActivity(activity);
     }
 
     public void Next(View view) {
         if (SubmitAnswer()) {
-            if (answer1 == true) {
-                MainActivity.RightAnswer[0] = true;
+            if (answer0 && answer2) {
+                MainActivity.RightAnswer[6] = true;
             }
-            Intent activity = new Intent(this, Question1.class);
+            Intent activity = new Intent(this, Question7.class);
             startActivity(activity);
         } else {
             Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
@@ -48,9 +52,9 @@ public class Question0 extends AppCompatActivity {
     }
 
     boolean SubmitAnswer() {
-        RadioButton[] rb = new RadioButton[]{findViewById(R.id.startActivityForResult),
-                findViewById(R.id.startActivityToResult),
-                findViewById(R.id.Bundle), findViewById(R.id.NoneOfTheAbove)};
+        CheckBox[] rb = new CheckBox[]{findViewById(R.id.layout_width),
+                findViewById(R.id.padding),
+                findViewById(R.id.layout_height), findViewById(R.id.text)};
         if (rb[0].isChecked()) {
             answer0 = true;
             return true;

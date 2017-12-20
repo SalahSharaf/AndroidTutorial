@@ -30,11 +30,18 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
-            android:text="@string/question_1"
+            android:text="@string/question_4"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/logo"
+            android:background="@drawable/button"
+            android:text="@string/Home"
+            android:onClick="GoHome"
+            android:textSize="10sp"/>
     </RelativeLayout>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
@@ -47,49 +54,43 @@
         android:fillViewport="true"
         android:layout_below="@id/Header2"
         android:layout_above="@id/Footer">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/QuestionBackground"
-        android:gravity="center"
-        android:background="@color/quetionsBackground"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/QuestionBackground"
+            android:gravity="center_vertical"
+            android:background="@color/quetionsBackground"
+            android:padding="10dp">
 
-        android:padding="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/how_to_get_a_response_from_an_activity_in_android"
-            android:textSize="20sp"
-            android:background="@color/colorPrimary"
-            android:textColor="#000000"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary">
-            <RadioButton
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/startActivityForResult"
-                android:text="@string/startactivitytoresult"/>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:id="@+id/startActivityToResult"
+                android:textSize="20dp"
+                android:text="@string/choose_the_view_groups_from_the_options_below"
+                android:textColor="#000000"/>
+            <CheckBox
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/startactivityforresult"/>
-            <RadioButton
-                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:id="@+id/LinearLayout"
+                android:text="@string/linearlayout"/>
+            <CheckBox
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/Bundle"
-                android:text="@string/bundle"/>
-            <RadioButton
-                android:layout_width="match_parent"
+                android:id="@+id/ImageView"
+                android:text="@string/imageview"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/RelativeLayout"
                 android:layout_height="wrap_content"
-                android:id="@+id/NoneOfTheAbove"
-                android:text="@string/none_of_the_above"/>
-        </RadioGroup>
-    </LinearLayout>
+                android:text="@string/relativelayout"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/TextView"
+                android:layout_height="wrap_content"
+                android:text="@string/textview"/>
+        </LinearLayout>
     </ScrollView>
     <RelativeLayout
         android:layout_width="match_parent"
