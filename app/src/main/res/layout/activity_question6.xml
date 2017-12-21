@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question0">
+    tools:context="com.example.android.androidtutorial.Question1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
-            android:text="@string/question_7"
+            android:text="@string/question_6"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
         <Button
@@ -62,35 +62,26 @@
             android:gravity="center_vertical"
             android:background="@color/quetionsBackground"
             android:padding="10dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/question5"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="@string/what_are_the_mandatory_attributes_for_any_view"
+                android:text="@string/write_the_final_value_of_i_variable"
                 android:textColor="#000000"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:id="@+id/layout_width"
-                android:text="@string/layout_width"/>
 
-            <CheckBox
-                android:id="@+id/padding"
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/padding" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:id="@+id/layout_height"
-                android:layout_height="wrap_content"
-                android:text="@string/layout_height"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:id="@+id/text"
-                android:layout_height="wrap_content"
-                android:text="@string/text"/>
+                android:scrollbars="vertical"
+                android:background="#ffffff"
+                android:inputType="number"
+                android:id="@+id/AnsweringArea3"/>
         </LinearLayout>
     </ScrollView>
     <RelativeLayout

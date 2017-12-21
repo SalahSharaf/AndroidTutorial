@@ -8,35 +8,25 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Question6 extends AppCompatActivity {
+public class Question8 extends AppCompatActivity {
 
-    public static String answer;
-
+    public  static String answer;
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
      * @param savedInstanceState
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question6);
+        setContentView(R.layout.activity_question8);
         if (savedInstanceState != null) {
-            EditText text = findViewById(R.id.AnsweringArea3);
+            EditText text = findViewById(R.id.AnsweringArea4);
             text.setText(savedInstanceState.getString("answer"));
         }else if(savedInstanceState==null) {
             MainActivity.currentQuestion++;
         }
-        MainActivity.btnEnabled[4] = true;
-    }
-    /**
-     * go to the main activity
-     * @param view
-     */
-    public void GoHome(View view) {
-        Intent activity = new Intent(this, MainActivity.class);
-        startActivity(activity);
+        MainActivity.btnEnabled[6] = true;
     }
     /**
      * first this function checks whither there's an input by calling SubmitAnswer() function
@@ -45,17 +35,16 @@ public class Question6 extends AppCompatActivity {
      * --if false show up a toast saying "Please choose an Answer"
      * @param view
      */
-
     public void Next(View view) {
-        String rightanswwr = "15";
+        String[] rightanswer = {"Button", "ImageView", "TextView"};
         if (SubmitAnswer()) {
-            if (answer.trim().matches(rightanswwr.trim())) {
-                MainActivity.rightAnswer[5] = true;
+            if (answer.contains(rightanswer[0]) && answer.contains(rightanswer[1]) && answer.contains(rightanswer[2])) {
+                MainActivity.rightAnswer[7] = true;
             }
-            Intent activity = new Intent(this, Question7.class);
+            Intent activity = new Intent(this, Results.class);
             startActivity(activity);
         } else {
-            Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please write an Answer", Toast.LENGTH_LONG).show();
         }
     }
     /**
@@ -70,7 +59,7 @@ public class Question6 extends AppCompatActivity {
      * @return
      */
     boolean SubmitAnswer() {
-        EditText text = findViewById(R.id.AnsweringArea3);
+        EditText text = findViewById(R.id.AnsweringArea4);
         String value = text.getText().toString();
         if (value.trim().equals("")) {
             return false;
@@ -79,7 +68,14 @@ public class Question6 extends AppCompatActivity {
             return true;
         }
     }
-
+    /**
+     * go to the main activity
+     * @param view
+     */
+    public void GoHome(View view) {
+        Intent activity = new Intent(this, MainActivity.class);
+        startActivity(activity);
+    }
     /**
      * saves the current state of the activity
      * in this case i will save the value of radio buttons

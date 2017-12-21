@@ -17,16 +17,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Question0"
+            android:name=".Question1"
             android:label="@string/title_activity_question0"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Question1" />
         <activity android:name=".Question2" />
         <activity android:name=".Question3" />
         <activity android:name=".Question4" />
         <activity android:name=".Question5" />
-        <activity android:name=".Question7" />
         <activity android:name=".Question6" />
+        <activity android:name=".Question8" />
+        <activity android:name=".Question7" />
         <activity android:name=".Results"></activity>
     </application>
 

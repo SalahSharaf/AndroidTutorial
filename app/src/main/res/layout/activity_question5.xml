@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question0">
+    tools:context="com.example.android.androidtutorial.Question1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
-            android:text="@string/question_6"
+            android:text="@string/question_5"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
         <Button
@@ -64,45 +64,53 @@
             android:padding="10dp">
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/question5"/>
+                android:layout_weight="1"
+                android:src="@drawable/question4"/>
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:textSize="20dp"
-                android:text="@string/write_the_final_value_of_i_variable"
+                android:layout_weight="1"
+                android:text="@string/find_the_error_in_the_image_above_then_rewrite_it"
                 android:textColor="#000000"/>
-
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="start"
+                android:layout_marginTop="30dp"
                 android:scrollbars="vertical"
+                android:onClick="pushUp"
                 android:background="#ffffff"
-                android:inputType="number"
-                android:id="@+id/AnsweringArea3"/>
+                android:layout_weight="2"
+                android:id="@+id/AnsweringArea2"/>
         </LinearLayout>
     </ScrollView>
+
     <RelativeLayout
+        android:id="@+id/Footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/Footer"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimaryDark"
         android:padding="10dp">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/Next"
+            android:background="@drawable/buttonnext"
             android:onClick="Next"
-            android:background="@drawable/buttonnext"/>
+            android:text="@string/Next" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/previous"
+            android:background="@drawable/buttonprevious"
             android:onClick="Back"
-            android:background="@drawable/buttonprevious"/>
+            android:text="@string/previous" />
     </RelativeLayout>
 </RelativeLayout>

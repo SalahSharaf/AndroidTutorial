@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question0">
+    tools:context="com.example.android.androidtutorial.Question1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
-            android:text="@string/question_8"
+            android:text="@string/question_7"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
         <Button
@@ -38,8 +38,8 @@
             android:layout_height="40dp"
             android:layout_below="@id/logo"
             android:background="@drawable/button"
-            android:onClick="GoHome"
             android:text="@string/Home"
+            android:onClick="GoHome"
             android:textSize="10sp"/>
     </RelativeLayout>
     <View
@@ -59,34 +59,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/QuestionBackground"
+            android:gravity="center_vertical"
             android:background="@color/quetionsBackground"
             android:padding="10dp">
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="350dp"
-                android:scaleY="1"
-                android:scaleX="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/question8"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:text="@string/write_the_views_in_the_app_above"
+                android:text="@string/what_are_the_mandatory_attributes_for_any_view"
                 android:textColor="#000000"/>
-            <TextView
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/notice_the_answer_is_case_sensitive_and_separate_views_with"
-                android:textSize="16sp"/>
+                android:layout_marginTop="20dp"
+                android:id="@+id/layout_width"
+                android:text="@string/layout_width"/>
 
-            <EditText
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/padding"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="vertical"
-                android:background="#ffffff"
-                android:id="@+id/AnsweringArea4"/>
+                android:text="@string/padding" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/layout_height"
+                android:layout_height="wrap_content"
+                android:text="@string/layout_height"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:id="@+id/text"
+                android:layout_height="wrap_content"
+                android:text="@string/text"/>
         </LinearLayout>
     </ScrollView>
     <RelativeLayout
@@ -100,14 +104,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/show_result"
+            android:text="@string/Next"
             android:onClick="Next"
-            android:background="@drawable/button"/>
+            android:background="@drawable/buttonnext"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/previous"
             android:onClick="Back"
-            android:background="@drawable/button"/>
+            android:background="@drawable/buttonprevious"/>
     </RelativeLayout>
 </RelativeLayout>

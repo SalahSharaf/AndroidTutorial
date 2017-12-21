@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question0">
+    tools:context="com.example.android.androidtutorial.Question1">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,11 +30,18 @@
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
             android:layout_marginTop="10dp"
-            android:text="@string/question_1"
+            android:text="@string/question_8"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/logo"
+            android:background="@drawable/button"
+            android:onClick="GoHome"
+            android:text="@string/Home"
+            android:textSize="10sp"/>
     </RelativeLayout>
-
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
@@ -47,49 +54,40 @@
         android:fillViewport="true"
         android:layout_below="@id/Header2"
         android:layout_above="@id/Footer">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/QuestionBackground"
-        android:gravity="center"
-        android:background="@color/quetionsBackground"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/QuestionBackground"
+            android:background="@color/quetionsBackground"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:scaleY="1"
+                android:scaleX="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/question8"/>
 
-        android:padding="10dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/how_to_get_a_response_from_an_activity_in_android"
-            android:textSize="20sp"
-            android:background="@color/colorPrimary"
-            android:textColor="#000000"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary">
-            <RadioButton
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="@string/write_the_views_in_the_app_above"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notice_the_answer_is_case_sensitive_and_separate_views_with"
+                android:textSize="16sp"/>
+
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/startActivityForResult"
-                android:text="@string/startactivitytoresult"/>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:id="@+id/startActivityToResult"
-                android:layout_height="wrap_content"
-                android:text="@string/startactivityforresult"/>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Bundle"
-                android:text="@string/bundle"/>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/NoneOfTheAbove"
-                android:text="@string/none_of_the_above"/>
-        </RadioGroup>
-    </LinearLayout>
+                android:scrollbars="vertical"
+                android:background="#ffffff"
+                android:id="@+id/AnsweringArea4"/>
+        </LinearLayout>
     </ScrollView>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -102,14 +100,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="@string/Next"
+            android:text="@string/submit"
             android:onClick="Next"
-            android:background="@drawable/buttonnext"/>
+            android:background="@drawable/button"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/previous"
             android:onClick="Back"
-            android:background="@drawable/buttonprevious"/>
+            android:background="@drawable/button"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
                 android:layout_alignParentRight="true"
-                android:onClick="GoTOQuestion0"
+                android:onClick="GoTOQuestion1"
                 android:text="Restart"/>
         </RelativeLayout>
 
@@ -127,13 +127,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question0Answer"
+                    android:id="@+id/question1Answer"
                     android:text="Your Answer : "
                     android:textColor="@color/AnswerWrong" />
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:id="@+id/question0RightAnswer"
+                    android:id="@+id/question1RightAnswer"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="Right Answer : "
@@ -150,36 +150,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/question_2"
-                    android:textColor="#000000"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:id="@+id/question1Answer"
-                    android:text="Your Answer : "
-                    android:textColor="@color/AnswerWrong" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:id="@+id/question1RightAnswer"
-                    android:text="Right Answer : "
-                    android:textColor="@color/AnswerRight" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/question_3"
                     android:textColor="#000000"
                     android:textSize="16sp" />
 
@@ -209,6 +179,36 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@string/question_3"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:id="@+id/question3Answer"
+                    android:text="Your Answer : "
+                    android:textColor="@color/AnswerWrong" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:id="@+id/question3RightAnswer"
+                    android:text="Right Answer : "
+                    android:textColor="@color/AnswerRight" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/question_4"
                     android:textColor="#000000"
                     android:textSize="16sp" />
@@ -218,13 +218,13 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="Your Answer : "
-                    android:id="@+id/question3Answer"
+                    android:id="@+id/question4Answer"
                     android:textColor="@color/AnswerWrong" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/question3RightAnswer"
+                    android:id="@+id/question4RightAnswer"
                     android:padding="5dp"
                     android:text="Right Answer : "
                     android:textColor="@color/AnswerRight" />
@@ -247,7 +247,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question4Answer"
+                    android:id="@+id/question5Answer"
                     android:text="Your Answer : "
                     android:textColor="@color/AnswerWrong" />
 
@@ -255,7 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question4RightAnswer"
+                    android:id="@+id/question5RightAnswer"
                     android:text="Right Answer : "
                     android:textColor="@color/AnswerRight" />
             </LinearLayout>
@@ -277,14 +277,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question5Answer"
+                    android:id="@+id/question6Answer"
                     android:text="Your Answer : "
                     android:textColor="@color/AnswerWrong" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/question5RightAnswer"
+                    android:id="@+id/question6RightAnswer"
                     android:padding="5dp"
                     android:text="Right Answer : "
                     android:textColor="@color/AnswerRight" />
@@ -307,7 +307,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question6Answer"
+                    android:id="@+id/question7Answer"
                     android:text="Your Answer : "
                     android:textColor="@color/AnswerWrong" />
 
@@ -315,7 +315,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:id="@+id/question6RightAnswer"
+                    android:id="@+id/question7RightAnswer"
                     android:text="Right Answer : "
                     android:textColor="@color/AnswerRight" />
             </LinearLayout>
@@ -336,7 +336,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/question7Answer"
+                    android:id="@+id/question8Answer"
                     android:padding="5dp"
                     android:text="Your Answer : "
                     android:textColor="@color/AnswerWrong" />
@@ -346,7 +346,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:text="Right Answer : "
-                    android:id="@+id/question7RightAnswer"
+                    android:id="@+id/question8RightAnswer"
                     android:textColor="@color/AnswerRight" />
             </LinearLayout>
 
