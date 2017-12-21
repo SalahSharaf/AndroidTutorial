@@ -10,10 +10,12 @@ import android.widget.Toast;
 
 public class Question7 extends AppCompatActivity {
     // each variable of these contains the value of each radio buttons
-    public  static  boolean answer0, answer1, answer2, answer3;
+    public static boolean answer0, answer1, answer2, answer3;
+
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     *
      * @param savedInstanceState
      */
     @Override
@@ -28,24 +30,27 @@ public class Question7 extends AppCompatActivity {
             rb[1].setChecked(savedInstanceState.getBoolean("answer1"));
             rb[2].setChecked(savedInstanceState.getBoolean("answer2"));
             rb[3].setChecked(savedInstanceState.getBoolean("answer3"));
-        }else if(savedInstanceState==null) {
-            MainActivity.currentQuestion++;
         }
+        MainActivity.currentQuestion=7;
         MainActivity.btnEnabled[5] = true;
     }
+
     /**
      * go to the main activity
+     *
      * @param view
      */
     public void GoHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
+
     /**
      * first this function checks whither there's an input by calling SubmitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
+     *
      * @param view
      */
     public void Next(View view) {
@@ -59,15 +64,19 @@ public class Question7 extends AppCompatActivity {
             Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
         }
     }
+
     /**
      * this function closes the current question and go to the previous one
+     *
      * @param view
      */
     public void Back(View view) {
         finish();
     }
+
     /**
      * checks whether there's an answer by getting the value of each radio button
+     *
      * @return
      */
     boolean SubmitAnswer() {
@@ -95,6 +104,7 @@ public class Question7 extends AppCompatActivity {
     /**
      * saves the current state of the activity
      * in this case i will save the value of CheckBoxes
+     *
      * @param outState
      */
     @Override

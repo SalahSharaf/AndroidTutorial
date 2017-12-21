@@ -55,6 +55,7 @@ public class Results extends AppCompatActivity {
 
     /**
      * show answers which were set to be invisible inside a ScrollView
+     *
      * @param view
      */
     public void ShowAnswers(View view) {
@@ -65,6 +66,7 @@ public class Results extends AppCompatActivity {
 
     /**
      * go to the first question
+     *
      * @param view
      */
     public void GoTOQuestion1(View view) {
@@ -74,6 +76,7 @@ public class Results extends AppCompatActivity {
 
     /**
      * go to main activity
+     *
      * @param view
      */
     public void GoHome(View view) {
@@ -85,49 +88,59 @@ public class Results extends AppCompatActivity {
      * initialize all TextViews in the hidden scrollView and set there text to the user answer followed by the right one
      */
     void TypingTask() {
-        TextView qanswer1 = findViewById(R.id.question1Answer);
-        TextView qanswer2 = findViewById(R.id.question2Answer);
-        TextView qanswer3 = findViewById(R.id.question3Answer);
-        TextView qanswer4 = findViewById(R.id.question4Answer);
-        TextView qanswer5 = findViewById(R.id.question5Answer);
-        TextView qanswer6 = findViewById(R.id.question6Answer);
-        TextView qanswer7 = findViewById(R.id.question7Answer);
-        TextView qanswer8 = findViewById(R.id.question8Answer);
-        TextView qRanswer1 = findViewById(R.id.question1RightAnswer);
-        TextView qRanswer2 = findViewById(R.id.question2RightAnswer);
-        TextView qRanswer3 = findViewById(R.id.question3RightAnswer);
-        TextView qRanswer4 = findViewById(R.id.question4RightAnswer);
-        TextView qRanswer5 = findViewById(R.id.question5RightAnswer);
-        TextView qRanswer6 = findViewById(R.id.question6RightAnswer);
-        TextView qRanswer7 = findViewById(R.id.question7RightAnswer);
-        TextView qRanswer8 = findViewById(R.id.question8RightAnswer);
-        qanswer1.setText("startActivityToResultA = " + Question1.answer0 +
+        //initializing TextViews
+        TextView[] qanswer = new TextView[8];
+        TextView[] qRanswer = new TextView[8];
+        qanswer[0] = findViewById(R.id.question1Answer);
+        qanswer[1] = findViewById(R.id.question2Answer);
+        qanswer[2] = findViewById(R.id.question3Answer);
+        qanswer[3] = findViewById(R.id.question4Answer);
+        qanswer[4] = findViewById(R.id.question5Answer);
+        qanswer[5] = findViewById(R.id.question6Answer);
+        qanswer[6] = findViewById(R.id.question7Answer);
+        qanswer[7] = findViewById(R.id.question8Answer);
+        qRanswer[0] = findViewById(R.id.question1RightAnswer);
+        qRanswer[1] = findViewById(R.id.question2RightAnswer);
+        qRanswer[2] = findViewById(R.id.question3RightAnswer);
+        qRanswer[3] = findViewById(R.id.question4RightAnswer);
+        qRanswer[4] = findViewById(R.id.question5RightAnswer);
+        qRanswer[5] = findViewById(R.id.question6RightAnswer);
+        qRanswer[6] = findViewById(R.id.question7RightAnswer);
+        qRanswer[7] = findViewById(R.id.question8RightAnswer);
+        //////////////////////////////////////////////////////////////////////
+        int color = getResources().getColor(R.color.AnswerRight);
+        for (int i = 0; i < MainActivity.rightAnswer.length; i++) {
+            if (MainActivity.rightAnswer[i] == true) {
+                qanswer[i].setTextColor(color);
+            }
+        }
+        qanswer[0].setText("startActivityToResultA = " + Question1.answer0 +
                 "\nstartActivityForResult = " + Question1.answer1 +
                 "\nBundle=" + Question1.answer2 +
                 "\nNone Of The Above = " + Question1.answer3);
-        qRanswer1.setText("startActivityForResult = true");
-        qanswer2.setText("Collection Of Views And Other Chield Views = " + Question2.answer0 +
+        qRanswer[0].setText("startActivityForResult = true");
+        qanswer[1].setText("Collection Of Views And Other Chield Views = " + Question2.answer0 +
                 "\nBaseClassOfBuildingBlocks = " + Question2.answer1 +
                 "\nLayouts = " + Question2.answer2 +
                 "\nNoneOfTheAbove2 = " + Question2.answer3);
-        qRanswer2.setText("Collection Of Views And Other Chield Views = true");
-        qanswer3.setText(Question3.answer);
-        qRanswer3.setText("String var = Awesome;\nTextView text=(TextView)findViewById(R.id.Text1);)");
-        qanswer4.setText("LinearLayout = " + Question4.answer0 +
+        qRanswer[1].setText("Collection Of Views And Other Chield Views = true");
+        qanswer[2].setText(Question3.answer);
+        qRanswer[2].setText("String var = Awesome;\nTextView text=(TextView)findViewById(R.id.Text1);)");
+        qanswer[3].setText("LinearLayout = " + Question4.answer0 +
                 "\nImageView = " + Question4.answer1 +
                 "\nRelativeLayout = " + Question4.answer2 +
                 "\nTextView = " + Question4.answer3);
-        qRanswer4.setText("LinearLayout = true\nRelativeLayout = true");
-        qanswer5.setText(Question5.answer);
-        qRanswer5.setText("TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);");
-        qanswer6.setText(Question6.answer);
-        qRanswer6.setText("15");
-        qanswer7.setText("layout_width = " + Question7.answer0 +
+        qRanswer[3].setText("LinearLayout = true\nRelativeLayout = true");
+        qanswer[4].setText(Question5.answer);
+        qRanswer[4].setText("TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);");
+        qanswer[5].setText(Question6.answer);
+        qRanswer[5].setText("15");
+        qanswer[6].setText("layout_width = " + Question7.answer0 +
                 "\npadding = " + Question7.answer1 +
                 "\nlayout_height = " + Question7.answer2 +
                 "\ntext = " + Question7.answer3);
-        qRanswer7.setText("layout_height = true\nlayout_width = true");
-        qanswer8.setText(Question8.answer);
-        qRanswer8.setText("Button,TextView,ImageView");
+        qRanswer[6].setText("layout_height = true\nlayout_width = true");
+        qanswer[7].setText(Question8.answer);
+        qRanswer[7].setText("Button,TextView,ImageView");
     }
 }

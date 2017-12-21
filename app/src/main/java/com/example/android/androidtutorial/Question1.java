@@ -15,6 +15,7 @@ public class Question1 extends AppCompatActivity {
     /**
      * initialize an array of radio buttons and restore the saved state
      * and increase currentQuestion variable by one
+     *
      * @param savedInstanceState
      */
     @Override
@@ -29,9 +30,8 @@ public class Question1 extends AppCompatActivity {
             rb[0].setChecked(savedInstanceState.getBoolean("answer1"));
             rb[0].setChecked(savedInstanceState.getBoolean("answer2"));
             rb[0].setChecked(savedInstanceState.getBoolean("answer3"));
-        } else if (savedInstanceState == null) {
-            MainActivity.currentQuestion++;
         }
+        MainActivity.currentQuestion = 1;
     }
 
     /**
@@ -64,6 +64,7 @@ public class Question1 extends AppCompatActivity {
 
     /**
      * checks whether there's an answer by getting the value of each radio button
+     *
      * @return
      */
     boolean SubmitAnswer() {
@@ -91,6 +92,7 @@ public class Question1 extends AppCompatActivity {
     /**
      * saves the current state of the activity
      * in this case i will save the value of radio buttons
+     *
      * @param outState
      */
     @Override

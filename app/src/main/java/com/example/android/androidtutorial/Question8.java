@@ -25,9 +25,8 @@ public class Question8 extends AppCompatActivity {
         if (savedInstanceState != null) {
             EditText text = findViewById(R.id.AnsweringArea4);
             text.setText(savedInstanceState.getString("answer"));
-        } else if (savedInstanceState == null) {
-            MainActivity.currentQuestion++;
         }
+        MainActivity.currentQuestion = 8;
         MainActivity.btnEnabled[6] = true;
     }
 
@@ -69,7 +68,7 @@ public class Question8 extends AppCompatActivity {
     boolean SubmitAnswer() {
         EditText text = findViewById(R.id.AnsweringArea4);
         String value = text.getText().toString();
-        if (value.replaceAll("\\s","").equals("")) {
+        if (value.replaceAll("\\s", "").equals("")) {
             return false;
         } else {
             answer = value;

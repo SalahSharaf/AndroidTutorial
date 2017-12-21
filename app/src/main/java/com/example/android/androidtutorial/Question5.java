@@ -8,13 +8,15 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
+
 public class Question5 extends AppCompatActivity {
     // this string variable contains the value of the answer
-   public static String answer;
+    public static String answer;
 
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     *
      * @param savedInstanceState
      */
     @Override
@@ -24,30 +26,33 @@ public class Question5 extends AppCompatActivity {
         if (savedInstanceState != null) {
             EditText text = findViewById(R.id.AnsweringArea2);
             text.setText(savedInstanceState.getString("answer"));
-        }else if(savedInstanceState==null) {
-            MainActivity.currentQuestion++;
         }
+        MainActivity.currentQuestion=5;
         MainActivity.btnEnabled[3] = true;
     }
+
     /**
      * go to the main activity
+     *
      * @param view
      */
     public void GoHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
+
     /**
      * first this function checks whither there's an input by calling SubmitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
+     *
      * @param view
      */
     public void Next(View view) {
         String rightanswer = "TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);";
         if (SubmitAnswer()) {
-            if (answer.replaceAll("\\s","").matches(rightanswer.replaceAll("\\s",""))) {
+            if (answer.replaceAll("\\s", "").matches(rightanswer.replaceAll("\\s", ""))) {
                 MainActivity.rightAnswer[4] = true;
             }
             Intent activity = new Intent(this, Question6.class);
@@ -56,19 +61,19 @@ public class Question5 extends AppCompatActivity {
             Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
         }
     }
-    public void pushUp(View view){
-        this.getWindow().setSoftInputMode(
-                WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-    }
+
     /**
      * this function closes the current question and go to the previous one
+     *
      * @param view
      */
     public void Back(View view) {
         finish();
     }
+
     /**
      * checks whether there's an answer by getting the value of EditText
+     *
      * @return
      */
     boolean SubmitAnswer() {
@@ -81,9 +86,11 @@ public class Question5 extends AppCompatActivity {
             return true;
         }
     }
+
     /**
      * saves the current state of the activity
      * in this case i will save the value of answer
+     *
      * @param outState
      */
     @Override

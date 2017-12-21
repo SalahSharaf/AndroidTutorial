@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static int currentQuestion = 0;
     // these are for the button show Result and Continue test button in the main activity to enable them in the right time
     public static boolean continueTest, showResult;
-    // controls buttons availability to enable the right button for the current question which user answers now
+    // controls buttons availability to enable the right button for the current question which user answers now they are 7 because the first question's button is already enabled
     public static boolean[] btnEnabled = new boolean[7];
     // an array of booleans to check every question answer right or wrong
     public static boolean[] rightAnswer = new boolean[8];
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnsEnabled[4] = findViewById(R.id.question6Button);
         btnsEnabled[5] = findViewById(R.id.question7Button);
         btnsEnabled[6] = findViewById(R.id.question8Button);
+        ///////////////////////////////////////
         for (int i = 0; i < btnsEnabled.length; i++) {
             btnsEnabled[i].setEnabled(btnEnabled[i]);
         }
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
      * and increasing the delay time every time
      */
     void animationsTask() {
-
+        //initializing cards array
         CardView[] cards = new CardView[8];
         // this variable identify the initial value for the time
         int duration = 1500;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         cards[5] = findViewById(R.id.question6);
         cards[6] = findViewById(R.id.question7);
         cards[7] = findViewById(R.id.question8);
+        /////////////////////////////////////////
         for (int i = 0; i < cards.length; i++) {
             animStart[i] = AnimationUtils.loadAnimation(this, R.anim.startinganimation);
             animStart[i].setDuration(duration + 200 * i);
@@ -189,11 +191,11 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
         outState.putInt("currentQuestion",currentQuestion);
         outState.getBoolean("showResult",showResult);
         outState.getBoolean("continueTest",continueTest);
         outState.putBooleanArray("btnEnabled",btnEnabled);
         outState.putBooleanArray("rightAnswer", rightAnswer);
+        super.onSaveInstanceState(outState);
     }
 }

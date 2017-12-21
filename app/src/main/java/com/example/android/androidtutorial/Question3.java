@@ -15,6 +15,7 @@ public class Question3 extends AppCompatActivity {
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     *
      * @param savedInstanceState
      */
     @Override
@@ -24,31 +25,34 @@ public class Question3 extends AppCompatActivity {
         if (savedInstanceState != null) {
             EditText text = findViewById(R.id.AnsweringArea);
             text.setText(savedInstanceState.getString("answer"));
-        }else if(savedInstanceState==null) {
-            MainActivity.currentQuestion++;
         }
+        MainActivity.currentQuestion=3;
         MainActivity.btnEnabled[1] = true;
     }
+
     /**
      * go to the main activity
+     *
      * @param view
      */
     public void GoHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
+
     /**
      * first this function checks whither there's an input by calling SubmitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
+     *
      * @param view
      */
     public void Next(View view) {
         //if there's an answer it will start the next activity if not it will show up a warning toast
-        String rightanswer="String .*=\"Awesome\";\nTextView .*=(TextView)findViewById(R.id.Text1);";
+        String rightanswer = "String .*=\"Awesome\";\nTextView .*=(TextView)findViewById(R.id.Text1);";
         if (SubmitAnswer()) {
-            if (answer.replaceAll("\\s","").matches(rightanswer.replaceAll("\\s",""))) {
+            if (answer.replaceAll("\\s", "").matches(rightanswer.replaceAll("\\s", ""))) {
                 MainActivity.rightAnswer[2] = true;
             }
             Intent activity = new Intent(this, Question4.class);
@@ -60,6 +64,7 @@ public class Question3 extends AppCompatActivity {
 
     /**
      * checks whether there's an answer by getting the value of EditText
+     *
      * @return
      */
     boolean SubmitAnswer() {
@@ -72,18 +77,23 @@ public class Question3 extends AppCompatActivity {
             return true;
         }
     }
+
     /**
      * this function closes the current question and go to the previous one
+     *
      * @param view
      */
     public void Back(View view) {
         finish();
     }
+
     /**
      * saves the current state of the activity
      * in this case i will save the value of answer
+     *
      * @param outState
      */
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("answer", answer);
