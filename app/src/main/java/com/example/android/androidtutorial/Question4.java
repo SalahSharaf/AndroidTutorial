@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 public class Question4 extends AppCompatActivity {
+    // each variable of these contains the value of each radio buttons
 
     public  static boolean answer0, answer1, answer2, answer3;
 

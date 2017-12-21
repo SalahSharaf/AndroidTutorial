@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 public class Question5 extends AppCompatActivity {
-
+    // this string variable contains the value of the answer
    public static String answer;
 
     /**
@@ -68,7 +68,7 @@ public class Question5 extends AppCompatActivity {
         finish();
     }
     /**
-     * checks whether there's an answer by getting the value of each radio button
+     * checks whether there's an answer by getting the value of EditText
      * @return
      */
     boolean SubmitAnswer() {

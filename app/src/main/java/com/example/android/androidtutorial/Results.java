@@ -83,7 +83,6 @@ public class Results extends AppCompatActivity {
 
     /**
      * initialize all TextViews in the hidden scrollView and set there text to the user answer followed by the right one
-     *
      */
     void TypingTask() {
         TextView qanswer1 = findViewById(R.id.question1Answer);

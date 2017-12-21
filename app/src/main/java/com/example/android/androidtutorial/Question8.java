@@ -9,11 +9,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Question8 extends AppCompatActivity {
+    // this string variable contains the value of the answer
+    public static String answer;
 
-    public  static String answer;
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     *
      * @param savedInstanceState
      */
     @Override
@@ -23,16 +25,18 @@ public class Question8 extends AppCompatActivity {
         if (savedInstanceState != null) {
             EditText text = findViewById(R.id.AnsweringArea4);
             text.setText(savedInstanceState.getString("answer"));
-        }else if(savedInstanceState==null) {
+        } else if (savedInstanceState == null) {
             MainActivity.currentQuestion++;
         }
         MainActivity.btnEnabled[6] = true;
     }
+
     /**
      * first this function checks whither there's an input by calling SubmitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
+     *
      * @param view
      */
     public void Next(View view) {
@@ -47,38 +51,46 @@ public class Question8 extends AppCompatActivity {
             Toast.makeText(this, "Please write an Answer", Toast.LENGTH_LONG).show();
         }
     }
+
     /**
      * this function closes the current question and go to the previous one
+     *
      * @param view
      */
     public void Back(View view) {
         finish();
     }
+
     /**
-     * checks whether there's an answer by getting the value of each radio button
-     * @return
+     * checks whether there's an answer by getting the value of EditText
+     *
+     * @return true or false
      */
     boolean SubmitAnswer() {
         EditText text = findViewById(R.id.AnsweringArea4);
         String value = text.getText().toString();
-        if (value.trim().equals("")) {
+        if (value.replaceAll("\\s","").equals("")) {
             return false;
         } else {
             answer = value;
             return true;
         }
     }
+
     /**
      * go to the main activity
+     *
      * @param view
      */
     public void GoHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
+
     /**
      * saves the current state of the activity
      * in this case i will save the value of radio buttons
+     *
      * @param outState
      */
     @Override
