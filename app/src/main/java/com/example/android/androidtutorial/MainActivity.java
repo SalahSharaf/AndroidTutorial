@@ -40,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
             btnsEnabled[i].setEnabled(btnEnabled[i]);
         }
         TextView text = findViewById(R.id.AnswersMessage);
-        String message = getString(R.string._0_of_8_questions_have_been_answered, currentQuestion + " ");
+        String message = getString(R.string._0_of_8_questions_have_been_answered, (currentQuestion-1) + " ");
+        TextView text2 = findViewById(R.id.CurrentQuestion);
+        text2.setText("Question"+currentQuestion);
         text.setText(message);
         Button btnContiue = findViewById(R.id.continueTest);
         Button btnShowReslut = findViewById(R.id.resultButton);
@@ -70,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         cards[5] = findViewById(R.id.question6);
         cards[6] = findViewById(R.id.question7);
         cards[7] = findViewById(R.id.question8);
-        /////////////////////////////////////////
+        ////////////////////////////////////////////////////////////////////////
         for (int i = 0; i < cards.length; i++) {
             animStart[i] = AnimationUtils.loadAnimation(this, R.anim.startinganimation);
             animStart[i].setDuration(duration + 200 * i);

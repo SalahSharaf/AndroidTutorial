@@ -80,7 +80,7 @@ public class Question6 extends AppCompatActivity {
     boolean SubmitAnswer() {
         EditText text = findViewById(R.id.AnsweringArea3);
         String value = text.getText().toString();
-        if (value.trim().equals("")) {
+        if (value.replaceAll("\\s","").equals("")) {
             return false;
         } else {
             answer = value;

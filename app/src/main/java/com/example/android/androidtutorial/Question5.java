@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,7 +15,6 @@ public class Question5 extends AppCompatActivity {
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
-     *
      * @param savedInstanceState
      */
     @Override
@@ -79,7 +77,7 @@ public class Question5 extends AppCompatActivity {
     boolean SubmitAnswer() {
         EditText text = (EditText) findViewById(R.id.AnsweringArea2);
         String value = text.getText().toString();
-        if (value.trim().equals("")) {
+        if (value.replaceAll("\\s","").equals("")) {
             return false;
         } else {
             answer = value;
