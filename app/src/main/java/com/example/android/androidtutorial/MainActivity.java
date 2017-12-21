@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    //here i have made global variables to be used in all the code document
+    /**here i have made global variables to be used in all the document */
 
-    // this variable identify the current question the user in
+    // this variable identify the current question the user answers now
     public static int currentQuestion = 0;
     // these are for the button show Result and Continue test button in the main activity to enable them in the right time
     public static boolean continueTest, showResult;
@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * this function continue the current question depending on the value of the variable currentQuestion
      * i didn't check the currentQuestion variable for value 1 because the button continue will not be enabled till the currentQuestion value be 2
-     *
      * @param view this for the button Continue
      */
     public void Continue(View view) {
@@ -104,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 1
-     *
      * @param view
      */
     public void StartTest(View view) {
@@ -114,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 2
-     *
      * @param view
      */
     public void StartQuestion2(View view) {
@@ -124,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 3
-     *
      * @param view
      */
     public void StartQuestion3(View view) {
@@ -134,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 4
-     *
      * @param view
      */
     public void StartQuestion4(View view) {
@@ -144,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 5
-     *
      * @param view
      */
     public void StartQuestion5(View view) {
@@ -154,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 6
-     *
      * @param view
      */
     public void StartQuestion6(View view) {
@@ -164,7 +157,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 7
-     *
      * @param view
      */
     public void StartQuestion7(View view) {
@@ -174,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 8
-     *
      * @param view
      */
     public void StartQuestion8(View view) {
@@ -184,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Result page
-     *
      * @param view
      */
     public void showResult(View view) {
@@ -192,7 +182,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(activity);
     }
 
-
+    /**
+     * saves the current state of the activity
+     * in this case i will save the value of the global variables
+     * @param outState
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

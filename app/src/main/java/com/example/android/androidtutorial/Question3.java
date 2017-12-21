@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 public class Question3 extends AppCompatActivity {
     // this string variable contains the value of the answer
-
     public static String answer;
 
     /**
@@ -82,7 +81,7 @@ public class Question3 extends AppCompatActivity {
     }
     /**
      * saves the current state of the activity
-     * in this case i will save the value of radio buttons
+     * in this case i will save the value of answer
      * @param outState
      */
     @Override

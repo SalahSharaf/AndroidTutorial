@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 public class Question4 extends AppCompatActivity {
     // each variable of these contains the value of each radio buttons
-
     public  static boolean answer0, answer1, answer2, answer3;
 
     /**
@@ -95,7 +94,7 @@ public class Question4 extends AppCompatActivity {
     }
     /**
      * saves the current state of the activity
-     * in this case i will save the value of radio buttons
+     * in this case i will save the value of CheckBoxes
      * @param outState
      */
     @Override

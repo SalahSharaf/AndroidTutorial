@@ -83,7 +83,7 @@ public class Question5 extends AppCompatActivity {
     }
     /**
      * saves the current state of the activity
-     * in this case i will save the value of radio buttons
+     * in this case i will save the value of answer
      * @param outState
      */
     @Override
