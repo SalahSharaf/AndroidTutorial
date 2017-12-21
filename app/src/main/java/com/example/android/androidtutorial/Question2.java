@@ -32,7 +32,7 @@ public class Question2 extends AppCompatActivity {
 
     public void Next(View view) {
         //if there's an answer it will start the next activity if not it will show up a warning toast
-        String rightanswer="String (.*)=\"Awesome\";(\n| )TextView (.*)=(TextView)findViewById(R.id.Text1);";
+        String rightanswer="String .*=\"Awesome\";\nTextView .*=(TextView)findViewById(R.id.Text1);";
         if (SubmitAnswer()) {
             if (answer.replaceAll("\\s","").matches(rightanswer.replaceAll("\\s",""))) {
                 MainActivity.RightAnswer[2] = true;
