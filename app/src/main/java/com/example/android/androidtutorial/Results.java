@@ -17,6 +17,7 @@ public class Results extends AppCompatActivity {
      *
      * @param savedInstanceState
      */
+    int count = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +43,7 @@ public class Results extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        // this integer variable contains the number of clicked
-        int count = 0;
+        // this integer variable contains the number of clicks
         count++;
         if (count == 2) {
             Intent activity = new Intent(this, MainActivity.class);

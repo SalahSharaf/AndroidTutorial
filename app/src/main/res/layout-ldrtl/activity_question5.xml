@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.android.androidtutorial.Question1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/Header1"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="@string/android_tutorial"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/AnswersMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="10dp"
+            android:text="@string/question_5"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp" />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/logo"
+            android:background="@drawable/button"
+            android:text="@string/Home"
+            android:onClick="GoHome"
+            android:textSize="10sp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:id="@+id/Header2"
+        android:layout_below="@id/Header1"
+        android:background="@color/colorPrimaryLight" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/Header2"
+        android:layout_above="@id/Footer">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/QuestionBackground"
+            android:gravity="center_vertical"
+            android:background="@color/quetionsBackground"
+            android:padding="10dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:layout_weight="1"
+                android:src="@drawable/question4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:textSize="20dp"
+                android:layout_weight="1"
+                android:text="@string/find_the_error_in_the_image_above_then_rewrite_it"
+                android:textColor="#000000"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="start"
+                android:layout_marginTop="30dp"
+                android:scrollbars="vertical"
+                android:background="#ffffff"
+                android:layout_weight="2"
+                android:id="@+id/AnsweringArea2"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimaryDark"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/buttonprevious"
+            android:onClick="Next"
+            android:text="@string/Next" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonnext"
+            android:onClick="Back"
+            android:text="@string/previous" />
+    </RelativeLayout>
+</RelativeLayout>

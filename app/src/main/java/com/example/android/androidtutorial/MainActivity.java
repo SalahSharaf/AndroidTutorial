@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    /**here i have made global variables to be used in all the document */
+    /**
+     * here i have made global variables to be used in all the document
+     */
 
     // this variable identify the current question the user answers now
     public static int currentQuestion = 0;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // initializing questions buttons array
+        // initializing questions buttons array and TextViews
         Button[] btnsEnabled = new Button[7];
         btnsEnabled[0] = findViewById(R.id.question2Button);
         btnsEnabled[1] = findViewById(R.id.question3Button);
@@ -35,18 +37,31 @@ public class MainActivity extends AppCompatActivity {
         btnsEnabled[4] = findViewById(R.id.question6Button);
         btnsEnabled[5] = findViewById(R.id.question7Button);
         btnsEnabled[6] = findViewById(R.id.question8Button);
-        ///////////////////////////////////////
+        TextView text = findViewById(R.id.AnswersMessage);
+        String message = getString(R.string._0_of_8_questions_have_been_answered, (currentQuestion - 1) + " ");
+        Button btnContiue = findViewById(R.id.continueTest);
+        Button btnShowReslut = findViewById(R.id.resultButton);
+        TextView text2 = findViewById(R.id.CurrentQuestion);
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        if(savedInstanceState==null){
+            currentQuestion=savedInstanceState.getInt("currentQuestion");
+            continueTest=savedInstanceState.getBoolean("continueTest");
+            showResult=savedInstanceState.getBoolean("showResult");
+            btnEnabled=savedInstanceState.getBooleanArray("btnEnabled");
+            rightAnswer=savedInstanceState.getBooleanArray("rightAnswer");
+        }
         for (int i = 0; i < btnsEnabled.length; i++) {
             btnsEnabled[i].setEnabled(btnEnabled[i]);
         }
-        TextView text = findViewById(R.id.AnswersMessage);
-        String message = getString(R.string._0_of_8_questions_have_been_answered, (currentQuestion-1) + " ");
-        TextView text2 = findViewById(R.id.CurrentQuestion);
-        text2.setText("Question"+currentQuestion);
+        if (continueTest) {
+            text2.setVisibility(View.VISIBLE);
+            btnContiue.setVisibility(View.VISIBLE);
+        } else {
+            text2.setVisibility(View.INVISIBLE);
+            btnContiue.setVisibility(View.INVISIBLE);
+        }
+        text2.setText("Question " + currentQuestion);
         text.setText(message);
-        Button btnContiue = findViewById(R.id.continueTest);
-        Button btnShowReslut = findViewById(R.id.resultButton);
-        btnContiue.setEnabled(continueTest);
         btnShowReslut.setEnabled(showResult);
         animationsTask();
     }
@@ -83,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * this function continue the current question depending on the value of the variable currentQuestion
      * i didn't check the currentQuestion variable for value 1 because the button continue will not be enabled till the currentQuestion value be 2
+     *
      * @param view this for the button Continue
      */
     public void Continue(View view) {
@@ -107,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 1
+     *
      * @param view
      */
     public void StartTest(View view) {
@@ -116,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 2
+     *
      * @param view
      */
     public void StartQuestion2(View view) {
@@ -125,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 3
+     *
      * @param view
      */
     public void StartQuestion3(View view) {
@@ -134,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 4
+     *
      * @param view
      */
     public void StartQuestion4(View view) {
@@ -143,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 5
+     *
      * @param view
      */
     public void StartQuestion5(View view) {
@@ -152,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 6
+     *
      * @param view
      */
     public void StartQuestion6(View view) {
@@ -161,6 +183,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 7
+     *
      * @param view
      */
     public void StartQuestion7(View view) {
@@ -170,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Question 8
+     *
      * @param view
      */
     public void StartQuestion8(View view) {
@@ -179,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * starts Result page
+     *
      * @param view
      */
     public void showResult(View view) {
@@ -189,14 +214,15 @@ public class MainActivity extends AppCompatActivity {
     /**
      * saves the current state of the activity
      * in this case i will save the value of the global variables
+     *
      * @param outState
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("currentQuestion",currentQuestion);
-        outState.getBoolean("showResult",showResult);
-        outState.getBoolean("continueTest",continueTest);
-        outState.putBooleanArray("btnEnabled",btnEnabled);
+        outState.putInt("currentQuestion", currentQuestion);
+        outState.getBoolean("showResult", showResult);
+        outState.getBoolean("continueTest", continueTest);
+        outState.putBooleanArray("btnEnabled", btnEnabled);
         outState.putBooleanArray("rightAnswer", rightAnswer);
         super.onSaveInstanceState(outState);
     }

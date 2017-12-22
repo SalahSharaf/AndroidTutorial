@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Tutorial</string>
+    <string name="android_tutorial">تعليم الاندرويد</string>
+    <string name="start">ابدأ</string>
+    <string name="Next">التالي</string>
+    <string name="question_2">"السؤال الثاني "</string>
+    <string name="question_1">السؤال الاول</string>
+    <string name="question_3">السؤال الثالث</string>
+    <string name="question_4">السؤال الرباع</string>
+    <string name="question_5">السؤال الخامس</string>
+    <string name="question_8">"السؤال الثامن "</string>
+    <string name="question_9">السؤال التاسع</string>
+    <string name="question_6">السؤال السادس</string>
+    <string name="previous">السابق</string>
+    <string name="question_7">السؤال السابع</string>
+    <string name="show_result">"النتيجه "</string>
+    <string name="Home">الرئيسيه</string>
+    <string name="Continue">اكمل الاختبار</string>
+    <string name="submit">"اعتمد "</string>
+    <string name="result">النتيجة</string>
+    <string name="congratulations">"تهانينا "</string>
+</resources>
