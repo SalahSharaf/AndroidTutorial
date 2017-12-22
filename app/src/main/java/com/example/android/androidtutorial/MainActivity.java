@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnShowReslut = findViewById(R.id.resultButton);
         TextView text2 = findViewById(R.id.CurrentQuestion);
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        if(savedInstanceState==null){
+        if(savedInstanceState!=null){
             currentQuestion=savedInstanceState.getInt("currentQuestion");
             continueTest=savedInstanceState.getBoolean("continueTest");
             showResult=savedInstanceState.getBoolean("showResult");
