@@ -32,7 +32,7 @@ public class Question2 extends AppCompatActivity {
             rb[0].setChecked(savedInstanceState.getBoolean("answer2"));
             rb[0].setChecked(savedInstanceState.getBoolean("answer3"));
         }
-        MainActivity.currentQuestion=2;
+        MainActivity.currentQuestion = 2;
         MainActivity.btnEnabled[0] = true;
         MainActivity.continueTest = true;
     }

@@ -38,17 +38,21 @@ public class MainActivity extends AppCompatActivity {
         btnsEnabled[5] = findViewById(R.id.question7Button);
         btnsEnabled[6] = findViewById(R.id.question8Button);
         TextView text = findViewById(R.id.AnswersMessage);
-        String message = getString(R.string._0_of_8_questions_have_been_answered, (currentQuestion - 1) + " ");
+        int previousQuestion = currentQuestion - 1;
+        if (previousQuestion < 0) {
+            previousQuestion = 0;
+        }
+        String message = getString(R.string._0_of_8_questions_have_been_answered, (previousQuestion) + " ");
         Button btnContiue = findViewById(R.id.continueTest);
         Button btnShowReslut = findViewById(R.id.resultButton);
         TextView text2 = findViewById(R.id.CurrentQuestion);
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        if(savedInstanceState!=null){
-            currentQuestion=savedInstanceState.getInt("currentQuestion");
-            continueTest=savedInstanceState.getBoolean("continueTest");
-            showResult=savedInstanceState.getBoolean("showResult");
-            btnEnabled=savedInstanceState.getBooleanArray("btnEnabled");
-            rightAnswer=savedInstanceState.getBooleanArray("rightAnswer");
+        if (savedInstanceState != null) {
+            currentQuestion = savedInstanceState.getInt("currentQuestion");
+            continueTest = savedInstanceState.getBoolean("continueTest");
+            showResult = savedInstanceState.getBoolean("showResult");
+            btnEnabled = savedInstanceState.getBooleanArray("btnEnabled");
+            rightAnswer = savedInstanceState.getBooleanArray("rightAnswer");
         }
         for (int i = 0; i < btnsEnabled.length; i++) {
             btnsEnabled[i].setEnabled(btnEnabled[i]);
@@ -56,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if (continueTest) {
             text2.setVisibility(View.VISIBLE);
             btnContiue.setVisibility(View.VISIBLE);
-        } else {
+        } else if (!continueTest) {
             text2.setVisibility(View.INVISIBLE);
             btnContiue.setVisibility(View.INVISIBLE);
         }

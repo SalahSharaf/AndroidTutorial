@@ -54,6 +54,7 @@
             android:layout_alignParentEnd="true"
             android:padding="5dp"
             android:text="question"
+            android:visibility="invisible"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
 
@@ -65,8 +66,8 @@
             android:layout_marginTop="10dp"
             android:layout_toLeftOf="@id/CurrentQuestion"
             android:background="@drawable/button"
-            android:enabled="false"
             android:onClick="Continue"
+            android:visibility="invisible"
             android:text="@string/Continue"
             android:textSize="10sp" />
     </RelativeLayout>
