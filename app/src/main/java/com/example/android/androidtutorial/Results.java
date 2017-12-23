@@ -18,6 +18,7 @@ public class Results extends AppCompatActivity {
      * @param savedInstanceState
      */
     int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +67,39 @@ public class Results extends AppCompatActivity {
 
     /**
      * go to the first question
+     * and resets all public static variables in the app to null
+     * in order to start a new test
      *
      * @param view
      */
     public void GoTOQuestion1(View view) {
+        MainActivity.currentQuestion = 0;
+        MainActivity.continueTest = false;
+        for (int i = 0; i > MainActivity.rightAnswer.length; i++)
+            MainActivity.rightAnswer[i] = false;
+        for (int i = 0; i < MainActivity.btnEnabled.length; i++)
+            MainActivity.btnEnabled[i] = false;
+        MainActivity.showResult = false;
+        Question1.answer0 = false;
+        Question1.answer1 = false;
+        Question1.answer2 = false;
+        Question1.answer3 = false;
+        Question2.answer0 = false;
+        Question2.answer1 = false;
+        Question2.answer2 = false;
+        Question2.answer3 = false;
+        Question3.answer = "";
+        Question4.answer0 = false;
+        Question4.answer1 = false;
+        Question4.answer2 = false;
+        Question4.answer3 = false;
+        Question5.answer = "";
+        Question6.answer = "";
+        Question7.answer0 = false;
+        Question7.answer1 = false;
+        Question7.answer2 = false;
+        Question7.answer3 = false;
+        Question8.answer = "";
         Intent activity = new Intent(this, Question1.class);
         startActivity(activity);
     }
