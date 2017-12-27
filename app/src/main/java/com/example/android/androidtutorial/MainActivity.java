@@ -105,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view this for the button Continue
      */
+
     public void Continue(View view) {
 
         if (currentQuestion == 2) {
@@ -130,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
+
     public void StartTest(View view) {
         Intent activity = new Intent(this, Question1.class);
         startActivity(activity);

@@ -59,7 +59,8 @@ public class Question1 extends AppCompatActivity {
      * @param view
      */
     public void Back(View view) {
-        finish();
+        Intent activity =new Intent(this,MainActivity.class);
+        startActivity(activity);
     }
 
     /**
