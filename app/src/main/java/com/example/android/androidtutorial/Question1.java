@@ -41,6 +41,7 @@ public class Question1 extends AppCompatActivity {
      * --if false show up a toast saying "Please choose an Answer"
      * @param view
      */
+
     public void Next(View view) {
         if (SubmitAnswer()) {
             if (answer1 == true) {
@@ -58,6 +59,7 @@ public class Question1 extends AppCompatActivity {
      *
      * @param view
      */
+
     public void Back(View view) {
         Intent activity =new Intent(this,MainActivity.class);
         startActivity(activity);

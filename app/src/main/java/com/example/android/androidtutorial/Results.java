@@ -144,33 +144,36 @@ public class Results extends AppCompatActivity {
                 qanswer[i].setTextColor(color);
             }
         }
-        qanswer[0].setText("startActivityToResultA = " + Question1.answer0 +
+        for (TextView r : qRanswer) {
+            r.append("Right Answer : ");
+        }
+        qanswer[0].append("startActivityToResultA = " + Question1.answer0 +
                 "\nstartActivityForResult = " + Question1.answer1 +
                 "\nBundle=" + Question1.answer2 +
                 "\nNone Of The Above = " + Question1.answer3);
-        qRanswer[0].setText("startActivityForResult = true");
+        qRanswer[0].append("startActivityForResult = true");
         qanswer[1].setText("Collection Of Views And Other Chield Views = " + Question2.answer0 +
                 "\nBaseClassOfBuildingBlocks = " + Question2.answer1 +
                 "\nLayouts = " + Question2.answer2 +
                 "\nNoneOfTheAbove2 = " + Question2.answer3);
-        qRanswer[1].setText("Collection Of Views And Other Chield Views = true");
-        qanswer[2].setText(Question3.answer);
-        qRanswer[2].setText("String var = Awesome;\nTextView text=(TextView)findViewById(R.id.Text1);)");
-        qanswer[3].setText("LinearLayout = " + Question4.answer0 +
-                "\nImageView = " + Question4.answer1 +
+        qRanswer[1].append("Collection Of Views And Other Chield Views = true");
+        qanswer[2].append(Question3.answer);
+        qRanswer[2].append("String var = Awesome;\nTextView text=(TextView)findViewById(R.id.Text1);");
+        qanswer[3].append("LinearLayout = " + Question4.answer0 + "\nImageView = " +
+                Question4.answer1 +
                 "\nRelativeLayout = " + Question4.answer2 +
                 "\nTextView = " + Question4.answer3);
-        qRanswer[3].setText("LinearLayout = true\nRelativeLayout = true");
-        qanswer[4].setText(Question5.answer);
-        qRanswer[4].setText("TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);");
-        qanswer[5].setText(Question6.answer);
-        qRanswer[5].setText("15");
-        qanswer[6].setText("layout_width = " + Question7.answer0 +
+        qRanswer[3].append("LinearLayout = true\nRelativeLayout = true");
+        qanswer[4].append(Question5.answer);
+        qRanswer[4].append("TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);");
+        qanswer[5].append(Question6.answer);
+        qRanswer[5].append("15");
+        qanswer[6].append("layout_width = " + Question7.answer0 +
                 "\npadding = " + Question7.answer1 +
                 "\nlayout_height = " + Question7.answer2 +
                 "\ntext = " + Question7.answer3);
-        qRanswer[6].setText("layout_height = true\nlayout_width = true");
-        qanswer[7].setText(Question8.answer);
-        qRanswer[7].setText("Button,TextView,ImageView");
+        qRanswer[6].append("layout_height = true\nlayout_width = true");
+        qanswer[7].append(Question8.answer);
+        qRanswer[7].append("Button,TextView,ImageView");
     }
 }
