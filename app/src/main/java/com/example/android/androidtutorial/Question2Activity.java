@@ -1,38 +1,40 @@
 package com.example.android.androidtutorial;
 
-
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class Question7 extends AppCompatActivity {
+public class Question2Activity extends AppCompatActivity {
     // each variable of these contains the value of each radio buttons
     public static boolean answer0, answer1, answer2, answer3;
 
     /**
      * restore the saved state
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     * and set continueTest variable to true to enable continue button in the main activity
      *
      * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question7);
+        setContentView(R.layout.activity_question2);
+        //checking if the value is null for the first call
         if (savedInstanceState != null) {
-            CheckBox[] rb = new CheckBox[]{findViewById(R.id.layout_width),
-                    findViewById(R.id.padding),
-                    findViewById(R.id.layout_height), findViewById(R.id.text)};
+            RadioButton[] rb = new RadioButton[]{findViewById(R.id.CollectionOfViewsAndOtherChieldViews),
+                    findViewById(R.id.BaseClassOfBuildingBlocks),
+                    findViewById(R.id.Layouts), findViewById(R.id.NoneOfTheAbove2)};
             rb[0].setChecked(savedInstanceState.getBoolean("answer0"));
-            rb[1].setChecked(savedInstanceState.getBoolean("answer1"));
-            rb[2].setChecked(savedInstanceState.getBoolean("answer2"));
-            rb[3].setChecked(savedInstanceState.getBoolean("answer3"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer1"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer2"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer3"));
         }
-        MainActivity.currentQuestion=7;
-        MainActivity.btnEnabled[5] = true;
+        MainActivity.currentQuestion = 2;
+        MainActivity.btnEnabled[0] = true;
+        MainActivity.continueTest = true;
     }
 
     /**
@@ -40,25 +42,25 @@ public class Question7 extends AppCompatActivity {
      *
      * @param view
      */
-    public void GoHome(View view) {
+    public void goHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
 
     /**
-     * first this function checks whither there's an input by calling SubmitAnswer() function
+     * first this function checks whither there's an input by calling submitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
      *
      * @param view
      */
-    public void Next(View view) {
-        if (SubmitAnswer()) {
-            if (answer0 && answer2) {
-                MainActivity.rightAnswer[6] = true;
+    public void next(View view) {
+        if (submitAnswer()) {
+            if (answer0 == true) {
+                MainActivity.rightAnswer[1] = true;
             }
-            Intent activity = new Intent(this, Question8.class);
+            Intent activity = new Intent(this, Question3Activity.class);
             startActivity(activity);
         } else {
             Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
@@ -70,7 +72,7 @@ public class Question7 extends AppCompatActivity {
      *
      * @param view
      */
-    public void Back(View view) {
+    public void back(View view) {
         finish();
     }
 
@@ -79,10 +81,10 @@ public class Question7 extends AppCompatActivity {
      *
      * @return
      */
-    boolean SubmitAnswer() {
-        CheckBox[] rb = new CheckBox[]{findViewById(R.id.layout_width),
-                findViewById(R.id.padding),
-                findViewById(R.id.layout_height), findViewById(R.id.text)};
+    boolean submitAnswer() {
+        RadioButton[] rb = new RadioButton[]{findViewById(R.id.CollectionOfViewsAndOtherChieldViews),
+                findViewById(R.id.BaseClassOfBuildingBlocks),
+                findViewById(R.id.Layouts), findViewById(R.id.NoneOfTheAbove2)};
         if (rb[0].isChecked()) {
             answer0 = true;
             return true;
@@ -103,7 +105,7 @@ public class Question7 extends AppCompatActivity {
 
     /**
      * saves the current state of the activity
-     * in this case i will save the value of CheckBoxes
+     * in this case i will save the value of radio buttons
      *
      * @param outState
      */
@@ -115,6 +117,5 @@ public class Question7 extends AppCompatActivity {
         outState.putBoolean("answer3", answer0);
         // call superclass to save any view hierarchy
         super.onSaveInstanceState(outState);
-
     }
 }

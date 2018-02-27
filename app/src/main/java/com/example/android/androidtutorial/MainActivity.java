@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     // this variable identify the current question the user answers now
     public static int currentQuestion = 0;
-    // these are for the button show Result and Continue test button in the main activity to enable them in the right time
+    // these are for the button show Result and continuing test button in the main activity to enable them in the right time
     public static boolean continueTest, showResult;
     // controls buttons availability to enable the right button for the current question which user answers now they are 7 because the first question's button is already enabled
     public static boolean[] btnEnabled = new boolean[7];
@@ -103,25 +103,25 @@ public class MainActivity extends AppCompatActivity {
      * this function continue the current question depending on the value of the variable currentQuestion
      * i didn't check the currentQuestion variable for value 1 because the button continue will not be enabled till the currentQuestion value be 2
      *
-     * @param view this for the button Continue
+     * @param view this for the button continuing
      */
 
-    public void Continue(View view) {
+    public void continuing(View view) {
 
         if (currentQuestion == 2) {
-            StartQuestion2(view);
+            startQuestion2(view);
         } else if (currentQuestion == 3) {
-            StartQuestion3(view);
+            startQuestion3(view);
         } else if (currentQuestion == 4) {
-            StartQuestion4(view);
+            startQuestion4(view);
         } else if (currentQuestion == 5) {
-            StartQuestion5(view);
+            startQuestion5(view);
         } else if (currentQuestion == 6) {
-            StartQuestion6(view);
+            startQuestion6(view);
         } else if (currentQuestion == 7) {
-            StartQuestion7(view);
+            startQuestion7(view);
         } else if (currentQuestion == 8) {
-            StartQuestion8(view);
+            startQuestion8(view);
         }
 
     }
@@ -132,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
 
-    public void StartTest(View view) {
-        Intent activity = new Intent(this, Question1.class);
+    public void startTest(View view) {
+        Intent activity = new Intent(this, Question1Activity.class);
         startActivity(activity);
     }
 
@@ -142,8 +142,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion2(View view) {
-        Intent activity = new Intent(this, Question2.class);
+    public void startQuestion2(View view) {
+        Intent activity = new Intent(this, Question2Activity.class);
         startActivity(activity);
     }
 
@@ -152,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion3(View view) {
-        Intent activity = new Intent(this, Question3.class);
+    public void startQuestion3(View view) {
+        Intent activity = new Intent(this, Question3Activity.class);
         startActivity(activity);
     }
 
@@ -162,8 +162,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion4(View view) {
-        Intent activity = new Intent(this, Question4.class);
+    public void startQuestion4(View view) {
+        Intent activity = new Intent(this, Question4Activity.class);
         startActivity(activity);
     }
 
@@ -172,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion5(View view) {
-        Intent activity = new Intent(this, Question5.class);
+    public void startQuestion5(View view) {
+        Intent activity = new Intent(this, Question5Activity.class);
         startActivity(activity);
     }
 
@@ -182,8 +182,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion6(View view) {
-        Intent activity = new Intent(this, Question6.class);
+    public void startQuestion6(View view) {
+        Intent activity = new Intent(this, Question6Activity.class);
         startActivity(activity);
     }
 
@@ -192,8 +192,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion7(View view) {
-        Intent activity = new Intent(this, Question7.class);
+    public void startQuestion7(View view) {
+        Intent activity = new Intent(this, Question7Activity.class);
         startActivity(activity);
     }
 
@@ -202,8 +202,8 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param view
      */
-    public void StartQuestion8(View view) {
-        Intent activity = new Intent(this, Question8.class);
+    public void startQuestion8(View view) {
+        Intent activity = new Intent(this, Question8Activity.class);
         startActivity(activity);
     }
 
@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void showResult(View view) {
-        Intent activity = new Intent(this, Results.class);
+        Intent activity = new Intent(this, ResultsActivity.class);
         startActivity(activity);
     }
 

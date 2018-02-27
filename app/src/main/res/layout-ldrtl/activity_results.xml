@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.androidtutorial.Results">
+    tools:context="com.example.android.androidtutorial.ResultsActivity">
 
     <RelativeLayout
         android:id="@+id/Header1"
@@ -71,7 +71,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="GoHome"
+                android:onClick="goHome"
                 android:background="@drawable/button"
                 android:text="@string/Home" />
             <Button
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/button"
                 android:layout_alignParentLeft="true"
-                android:onClick="GoTOQuestion1"
+                android:onClick="goToQuestion1"
                 android:text="Restart"/>
         </RelativeLayout>
 
@@ -95,7 +95,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
-        android:onClick="ShowAnswers"
+        android:onClick="showAnswers"
         android:text="show Answers"/>
     <ScrollView
         android:layout_width="match_parent"

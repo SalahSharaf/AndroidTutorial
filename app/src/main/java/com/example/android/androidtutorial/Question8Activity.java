@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Question6 extends AppCompatActivity {
+public class Question8Activity extends AppCompatActivity {
     // this string variable contains the value of the answer
     public static String answer;
 
@@ -18,48 +18,36 @@ public class Question6 extends AppCompatActivity {
      *
      * @param savedInstanceState
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question6);
+        setContentView(R.layout.activity_question8);
         if (savedInstanceState != null) {
-            EditText text = findViewById(R.id.AnsweringArea3);
+            EditText text = findViewById(R.id.AnsweringArea4);
             text.setText(savedInstanceState.getString("answer"));
         }
-        MainActivity.currentQuestion=6;
-        MainActivity.btnEnabled[4] = true;
+        MainActivity.currentQuestion = 8;
+        MainActivity.btnEnabled[6] = true;
     }
 
     /**
-     * go to the main activity
-     *
-     * @param view
-     */
-    public void GoHome(View view) {
-        Intent activity = new Intent(this, MainActivity.class);
-        startActivity(activity);
-    }
-
-    /**
-     * first this function checks whither there's an input by calling SubmitAnswer() function
+     * first this function checks whither there's an input by calling submitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
      *
      * @param view
      */
-
-    public void Next(View view) {
-        String rightanswwr = "15";
-        if (SubmitAnswer()) {
-            if (answer.trim().matches(rightanswwr.trim())) {
-                MainActivity.rightAnswer[5] = true;
+    public void next(View view) {
+        String[] rightanswer = {"Button", "ImageView", "TextView"};
+        if (submitAnswer()) {
+            if (answer.contains(rightanswer[0]) && answer.contains(rightanswer[1]) && answer.contains(rightanswer[2])) {
+                MainActivity.rightAnswer[7] = true;
             }
-            Intent activity = new Intent(this, Question7.class);
+            Intent activity = new Intent(this, ResultsActivity.class);
             startActivity(activity);
         } else {
-            Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please write an Answer", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -68,24 +56,34 @@ public class Question6 extends AppCompatActivity {
      *
      * @param view
      */
-    public void Back(View view) {
+    public void back(View view) {
         finish();
     }
 
     /**
      * checks whether there's an answer by getting the value of EditText
      *
-     * @return
+     * @return true or false
      */
-    boolean SubmitAnswer() {
-        EditText text = findViewById(R.id.AnsweringArea3);
+    boolean submitAnswer() {
+        EditText text = findViewById(R.id.AnsweringArea4);
         String value = text.getText().toString();
-        if (value.replaceAll("\\s","").equals("")) {
+        if (value.replaceAll("\\s", "").equals("")) {
             return false;
         } else {
             answer = value;
             return true;
         }
+    }
+
+    /**
+     * go to the main activity
+     *
+     * @param view
+     */
+    public void goHome(View view) {
+        Intent activity = new Intent(this, MainActivity.class);
+        startActivity(activity);
     }
 
     /**

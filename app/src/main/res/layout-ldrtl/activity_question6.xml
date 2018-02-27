@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question1">
+    tools:context="com.example.android.androidtutorial.Question1Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/Header1"
         android:padding="15dp">
 
@@ -21,26 +21,28 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
+            android:layout_alignBaseline="@+id/button9"
+            android:layout_alignBottom="@+id/button9"
+            android:layout_alignParentEnd="true"
             android:text="@string/question_6"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_question_text_size" />
         <Button
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_below="@id/logo"
             android:background="@drawable/button"
+            android:layout_marginTop="@dimen/question_content_margin_top"
             android:text="@string/Home"
-            android:onClick="GoHome"
-            android:textSize="10sp"/>
+            android:onClick="goHome"
+            android:textSize="10sp"
+            android:id="@+id/button9" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
@@ -60,7 +62,7 @@
             android:orientation="vertical"
             android:id="@+id/QuestionBackground"
             android:gravity="center_vertical"
-            android:background="@color/quetionsBackground"
+            android:background="@color/questionsBackground"
             android:padding="10dp">
             <ImageView
                 android:layout_width="match_parent"
@@ -69,11 +71,13 @@
                 android:src="@drawable/question5"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
+                android:textAlignment="center"
+                android:layout_marginVertical="@dimen/question_content_margin_top"
                 android:text="@string/write_the_final_value_of_i_variable"
-                android:textColor="#000000"/>
+                android:textColor="@color/colorPrimaryDark"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -87,22 +91,24 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/Footer"
         android:layout_alignParentBottom="true"
-        android:padding="10dp">
+        android:padding="@dimen/bottom_initial_padding">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="@string/Next"
-            android:onClick="Next"
+            android:onClick="next"
+            android:textColor="@color/questionsBackground"
             android:background="@drawable/buttonprevious"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/previous"
-            android:onClick="Back"
+            android:onClick="back"
+            android:textColor="@color/questionsBackground"
             android:background="@drawable/buttonnext"/>
     </RelativeLayout>
 </RelativeLayout>

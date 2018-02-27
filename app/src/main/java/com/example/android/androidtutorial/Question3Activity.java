@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Question3 extends AppCompatActivity {
+public class Question3Activity extends AppCompatActivity {
     // this string variable contains the value of the answer
     public static String answer;
 
@@ -35,27 +35,27 @@ public class Question3 extends AppCompatActivity {
      *
      * @param view
      */
-    public void GoHome(View view) {
+    public void goHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
 
     /**
-     * first this function checks whither there's an input by calling SubmitAnswer() function
+     * first this function checks whither there's an input by calling submitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
      *
      * @param view
      */
-    public void Next(View view) {
+    public void next(View view) {
         //if there's an answer it will start the next activity if not it will show up a warning toast
         String rightanswer = "String .*=\"Awesome\";\nTextView .*=(TextView)findViewById(R.id.Text1);";
-        if (SubmitAnswer()) {
+        if (submitAnswer()) {
             if (answer.replaceAll("\\s", "").matches(rightanswer.replaceAll("\\s", ""))) {
                 MainActivity.rightAnswer[2] = true;
             }
-            Intent activity = new Intent(this, Question4.class);
+            Intent activity = new Intent(this, Question4Activity.class);
             startActivity(activity);
         } else {
             Toast.makeText(this, "Please write an Answer", Toast.LENGTH_LONG).show();
@@ -67,7 +67,7 @@ public class Question3 extends AppCompatActivity {
      *
      * @return
      */
-    boolean SubmitAnswer() {
+    boolean submitAnswer() {
         EditText text = (EditText) findViewById(R.id.AnsweringArea);
         String value = text.getText().toString();
         if (value.trim().equals("")) {
@@ -83,7 +83,7 @@ public class Question3 extends AppCompatActivity {
      *
      * @param view
      */
-    public void Back(View view) {
+    public void back(View view) {
         finish();
     }
 

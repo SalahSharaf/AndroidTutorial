@@ -1,28 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="20dp" android:topLeftRadius="10dp" android:topRightRadius="20dp" />
+            <gradient android:angle="-90" android:endColor="@color/colorPrimaryDark" android:startColor="@color/colorPrimaryLight" />
+            <solid android:color="@color/colorPrimaryLight"/>
+            <stroke android:width="3dip" android:color="@color/questionsBackground" />
+        </shape>
+    </item>
+
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
             <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="20dp" android:topLeftRadius="10dp" android:topRightRadius="20dp" />
-            <stroke android:width="3dip" android:color="#5e7974" />
-            <solid android:color="@color/colorPrimaryLight" />
-            <gradient android:angle="-90" android:startColor="@color/colorPrimaryDark" android:endColor="@color/colorPrimary" />
+            <stroke android:width="3dip" android:color="@color/questionsBackground" />
+            <gradient android:angle="-90" android:startColor="@color/colorPrimaryDark" android:endColor="@color/questionsBackground" />
         </shape>
     </item>
 
     <item android:state_focused="true">
         <shape android:shape="rectangle">
-            <stroke android:width="3dip" android:color="#5e7974" />
+            <stroke android:width="3dip" android:color="@color/questionsBackground" />
             <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="20dp" android:topLeftRadius="10dp" android:topRightRadius="20dp" />
-            <gradient android:angle="-90" android:startColor="@color/colorPrimaryDark" android:endColor="@color/colorPrimary" />
-            <solid android:color="@color/colorPrimaryLight" />
+            <gradient android:angle="-90" android:startColor="@color/colorPrimaryDark" android:endColor="@color/questionsBackground" />
         </shape>
     </item>
     <item>
         <shape android:shape="rectangle">
+            <solid android:color="@color/colorPrimaryDark"/>
             <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="20dp" android:topLeftRadius="10dp" android:topRightRadius="20dp" />
-            <stroke android:width="2dip" android:color="#5e7974" />
-            <solid android:color="@color/colorPrimary" />
+            <stroke android:width="2dip" android:color="@color/questionsBackground" />
         </shape>
     </item>
 

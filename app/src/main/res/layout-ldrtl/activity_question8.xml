@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question1">
+    tools:context="com.example.android.androidtutorial.Question1Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/Header1"
         android:padding="15dp">
 
@@ -21,26 +21,28 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
+            android:layout_alignBaseline="@+id/button12"
+            android:layout_alignBottom="@+id/button12"
+            android:layout_alignParentEnd="true"
             android:text="@string/question_8"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_question_text_size" />
         <Button
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_below="@id/logo"
             android:background="@drawable/button"
-            android:onClick="GoHome"
+            android:onClick="goHome"
             android:text="@string/Home"
-            android:textSize="10sp"/>
+            android:layout_marginTop="@dimen/question_content_margin_top"
+            android:textSize="@dimen/header_button_text_size"
+            android:id="@+id/button12" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
@@ -59,27 +61,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:id="@+id/QuestionBackground"
-            android:background="@color/quetionsBackground"
+            android:background="@color/questionsBackground"
             android:padding="10dp">
             <ImageView
                 android:layout_width="250dp"
                 android:layout_height="350dp"
                 android:scaleY="1"
                 android:scaleX="1"
+                android:layout_gravity="center_horizontal"
                 android:scaleType="fitXY"
                 android:src="@drawable/question8"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textAlignment="center"
+                android:textSize="@dimen/question_header_text_size"
+                android:layout_marginVertical="@dimen/question_content_margin_top"
                 android:text="@string/write_the_views_in_the_app_above"
                 android:textColor="#000000"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:text="@string/notice_the_answer_is_case_sensitive_and_separate_views_with"
-                android:textSize="16sp"/>
+                android:textSize="@dimen/question_notice_text_size"/>
 
             <EditText
                 android:layout_width="match_parent"
@@ -92,22 +98,24 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:id="@+id/Footer"
         android:layout_alignParentBottom="true"
-        android:padding="10dp">
+        android:padding="@dimen/bottom_initial_padding">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="@string/submit"
-            android:onClick="Next"
+            android:textColor="@color/questionsBackground"
+            android:onClick="next"
             android:background="@drawable/buttonprevious"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/previous"
-            android:onClick="Back"
+            android:textColor="@color/questionsBackground"
+            android:onClick="back"
             android:background="@drawable/buttonnext"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -8,10 +8,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Results extends AppCompatActivity {
+public class ResultsActivity extends AppCompatActivity {
     /**
      * checks the number of right answers
-     * calling TypingTask function to display answers and the right ones
+     * calling typingTask function to display answers and the right ones
      * disabling continue button by setting continueTask variable in the maiin activity to false
      * enabling Show Result button in the main activity by setting showResult variable to true
      *
@@ -30,8 +30,9 @@ public class Results extends AppCompatActivity {
                 x++;
             }
         }
+
         text.setText("" + x + " / 8");
-        TypingTask();
+        typingTask();
         MainActivity.continueTest = false;
         MainActivity.showResult = true;
     }
@@ -41,6 +42,7 @@ public class Results extends AppCompatActivity {
      * if one show up toast to display a message
      * if count reaches 2 then go home to the main activity
      */
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -59,7 +61,8 @@ public class Results extends AppCompatActivity {
      *
      * @param view
      */
-    public void ShowAnswers(View view) {
+
+    public void showAnswers(View view) {
         ScrollView answersScrollView = findViewById(R.id.Answers);
         answersScrollView.setVisibility(View.VISIBLE);
         view.setVisibility(View.INVISIBLE);
@@ -72,7 +75,7 @@ public class Results extends AppCompatActivity {
      *
      * @param view
      */
-    public void GoTOQuestion1(View view) {
+    public void goToQuestion1(View view) {
         MainActivity.currentQuestion = 0;
         MainActivity.continueTest = false;
         for (int i = 0; i > MainActivity.rightAnswer.length; i++)
@@ -80,27 +83,27 @@ public class Results extends AppCompatActivity {
         for (int i = 0; i < MainActivity.btnEnabled.length; i++)
             MainActivity.btnEnabled[i] = false;
         MainActivity.showResult = false;
-        Question1.answer0 = false;
-        Question1.answer1 = false;
-        Question1.answer2 = false;
-        Question1.answer3 = false;
-        Question2.answer0 = false;
-        Question2.answer1 = false;
-        Question2.answer2 = false;
-        Question2.answer3 = false;
-        Question3.answer = "";
-        Question4.answer0 = false;
-        Question4.answer1 = false;
-        Question4.answer2 = false;
-        Question4.answer3 = false;
-        Question5.answer = "";
-        Question6.answer = "";
-        Question7.answer0 = false;
-        Question7.answer1 = false;
-        Question7.answer2 = false;
-        Question7.answer3 = false;
-        Question8.answer = "";
-        Intent activity = new Intent(this, Question1.class);
+        Question1Activity.answer0 = false;
+        Question1Activity.answer1 = false;
+        Question1Activity.answer2 = false;
+        Question1Activity.answer3 = false;
+        Question2Activity.answer0 = false;
+        Question2Activity.answer1 = false;
+        Question2Activity.answer2 = false;
+        Question2Activity.answer3 = false;
+        Question3Activity.answer = "";
+        Question4Activity.answer0 = false;
+        Question4Activity.answer1 = false;
+        Question4Activity.answer2 = false;
+        Question4Activity.answer3 = false;
+        Question5Activity.answer = "";
+        Question6Activity.answer = "";
+        Question7Activity.answer0 = false;
+        Question7Activity.answer1 = false;
+        Question7Activity.answer2 = false;
+        Question7Activity.answer3 = false;
+        Question8Activity.answer = "";
+        Intent activity = new Intent(this, Question1Activity.class);
         startActivity(activity);
     }
 
@@ -109,7 +112,7 @@ public class Results extends AppCompatActivity {
      *
      * @param view
      */
-    public void GoHome(View view) {
+    public void goHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
     }
@@ -117,7 +120,7 @@ public class Results extends AppCompatActivity {
     /**
      * initialize all TextViews in the hidden scrollView and set there text to the user answer followed by the right one
      */
-    void TypingTask() {
+    void typingTask() {
         //initializing TextViews
         TextView[] qanswer = new TextView[8];
         TextView[] qRanswer = new TextView[8];
@@ -144,36 +147,33 @@ public class Results extends AppCompatActivity {
                 qanswer[i].setTextColor(color);
             }
         }
-        for (TextView r : qRanswer) {
-            r.append("Right Answer : ");
-        }
-        qanswer[0].append("startActivityToResultA = " + Question1.answer0 +
-                "\nstartActivityForResult = " + Question1.answer1 +
-                "\nBundle=" + Question1.answer2 +
-                "\nNone Of The Above = " + Question1.answer3);
+        qanswer[0].append("startActivityToResultA = " + Question1Activity.answer0 +
+                "\nstartActivityForResult = " + Question1Activity.answer1 +
+                "\nBundle = " + Question1Activity.answer2 +
+                "\nNone Of The Above = " + Question1Activity.answer3);
         qRanswer[0].append("startActivityForResult = true");
-        qanswer[1].setText("Collection Of Views And Other Chield Views = " + Question2.answer0 +
-                "\nBaseClassOfBuildingBlocks = " + Question2.answer1 +
-                "\nLayouts = " + Question2.answer2 +
-                "\nNoneOfTheAbove2 = " + Question2.answer3);
+        qanswer[1].append("Collection Of Views And Other Chield Views = " + Question2Activity.answer0 +
+                "\nBaseClassOfBuildingBlocks = " + Question2Activity.answer1 +
+                "\nLayouts = " + Question2Activity.answer2 +
+                "\nNoneOfTheAbove2 = " + Question2Activity.answer3);
         qRanswer[1].append("Collection Of Views And Other Chield Views = true");
-        qanswer[2].append(Question3.answer);
+        qanswer[2].append(Question3Activity.answer);
         qRanswer[2].append("String var = Awesome;\nTextView text=(TextView)findViewById(R.id.Text1);");
-        qanswer[3].append("LinearLayout = " + Question4.answer0 + "\nImageView = " +
-                Question4.answer1 +
-                "\nRelativeLayout = " + Question4.answer2 +
-                "\nTextView = " + Question4.answer3);
+        qanswer[3].append("LinearLayout = " + Question4Activity.answer0 + "\nImageView = " +
+                Question4Activity.answer1 +
+                "\nRelativeLayout = " + Question4Activity.answer2 +
+                "\nTextView = " + Question4Activity.answer3);
         qRanswer[3].append("LinearLayout = true\nRelativeLayout = true");
-        qanswer[4].append(Question5.answer);
+        qanswer[4].append(Question5Activity.answer);
         qRanswer[4].append("TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);");
-        qanswer[5].append(Question6.answer);
+        qanswer[5].append(Question6Activity.answer);
         qRanswer[5].append("15");
-        qanswer[6].append("layout_width = " + Question7.answer0 +
-                "\npadding = " + Question7.answer1 +
-                "\nlayout_height = " + Question7.answer2 +
-                "\ntext = " + Question7.answer3);
+        qanswer[6].append("layout_width = " + Question7Activity.answer0 +
+                "\npadding = " + Question7Activity.answer1 +
+                "\nlayout_height = " + Question7Activity.answer2 +
+                "\ntext = " + Question7Activity.answer3);
         qRanswer[6].append("layout_height = true\nlayout_width = true");
-        qanswer[7].append(Question8.answer);
+        qanswer[7].append(Question8Activity.answer);
         qRanswer[7].append("Button,TextView,ImageView");
     }
 }

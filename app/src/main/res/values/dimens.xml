@@ -1,3 +1,25 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="header_initial_padding">15dp</dimen>
+    <dimen name="header_logo_text_size">18sp</dimen>
+    <dimen name="header_states_text_size">14sp</dimen>
+    <dimen name="header_show_result_button_width">70dp</dimen>
+    <dimen name="header_show_result_button_height">40dp</dimen>
+    <dimen name="header_current_question_padding">5dp</dimen>
+    <dimen name="header_current_question_text_size">14sp</dimen>
+    <dimen name="header_continue_test_button_width">70dp</dimen>
+    <dimen name="header_continue_test_button_height">40dp</dimen>
+    <dimen name="header_initial_margin_top">10dp</dimen>
+    <dimen name="header_button_text_size">10sp</dimen>
+    <dimen name="cards_padding">15dp</dimen>
+    <dimen name="cards_header_text_size">12sp</dimen>
+    <dimen name="cards_logo_text_size">40sp</dimen>
+    <dimen name="cards_buttons_text_size">10sp</dimen>
+    <dimen name="questions_initial_padding">10dp</dimen>
+    <dimen name="question_header_text_size">20sp</dimen>
+    <dimen name="question_content_margin_top">20dp</dimen>
+    <dimen name="header_question_text_size">14sp</dimen>
+    <dimen name="question_notice_text_size">16sp</dimen>
+    <dimen name="bottom_initial_padding">10dp</dimen>
+    <dimen name="result_main_text_sizes">40sp</dimen>
 </resources>

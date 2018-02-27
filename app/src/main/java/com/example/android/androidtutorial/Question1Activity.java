@@ -5,60 +5,49 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-public class Question4 extends AppCompatActivity {
+public class Question1Activity extends AppCompatActivity {
     // each variable of these contains the value of each radio buttons
     public static boolean answer0, answer1, answer2, answer3;
 
     /**
-     * restore the saved state
-     * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
+     * initialize an array of radio buttons and restore the saved state
+     * and increase currentQuestion variable by one
      *
      * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question4);
+        setContentView(R.layout.activity_question1);
         if (savedInstanceState != null) {
-            CheckBox[] rb = new CheckBox[]{findViewById(R.id.LinearLayout),
-                    findViewById(R.id.ImageView),
-                    findViewById(R.id.RelativeLayout), findViewById(R.id.TextView)};
+            RadioButton[] rb = new RadioButton[]{findViewById(R.id.startActivityForResult),
+                    findViewById(R.id.startActivityToResult),
+                    findViewById(R.id.Bundle), findViewById(R.id.NoneOfTheAbove)};
             rb[0].setChecked(savedInstanceState.getBoolean("answer0"));
-            rb[1].setChecked(savedInstanceState.getBoolean("answer1"));
-            rb[2].setChecked(savedInstanceState.getBoolean("answer2"));
-            rb[3].setChecked(savedInstanceState.getBoolean("answer3"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer1"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer2"));
+            rb[0].setChecked(savedInstanceState.getBoolean("answer3"));
         }
-        MainActivity.currentQuestion=4;
-        MainActivity.btnEnabled[2] = true;
+        MainActivity.currentQuestion = 1;
     }
 
     /**
-     * go to the main activity
-     *
-     * @param view
-     */
-    public void GoHome(View view) {
-        Intent activity = new Intent(this, MainActivity.class);
-        startActivity(activity);
-    }
-
-    /**
-     * first this function checks whither there's an input by calling SubmitAnswer() function
+     * first this function checks whither there's an input by calling submitAnswer() function
      * --if true then start the next activity
      * then check the answer itself if true then it's variable in the main activity is assigned to true inside it's array
      * --if false show up a toast saying "Please choose an Answer"
-     *
      * @param view
      */
-    public void Next(View view) {
-        if (SubmitAnswer()) {
-            if (answer0 == true && answer2 == true) {
-                MainActivity.rightAnswer[3] = true;
+
+    public void next(View view) {
+        if (submitAnswer()) {
+            if (answer1 == true) {
+                MainActivity.rightAnswer[0] = true;
             }
-            Intent activity = new Intent(this, Question5.class);
+            Intent activity = new Intent(this, Question2Activity.class);
             startActivity(activity);
         } else {
             Toast.makeText(this, "Please choose an Answer", Toast.LENGTH_LONG).show();
@@ -70,8 +59,10 @@ public class Question4 extends AppCompatActivity {
      *
      * @param view
      */
-    public void Back(View view) {
-        finish();
+
+    public void back(View view) {
+        Intent activity =new Intent(this,MainActivity.class);
+        startActivity(activity);
     }
 
     /**
@@ -79,10 +70,10 @@ public class Question4 extends AppCompatActivity {
      *
      * @return
      */
-    boolean SubmitAnswer() {
-        CheckBox[] rb = new CheckBox[]{findViewById(R.id.LinearLayout),
-                findViewById(R.id.ImageView),
-                findViewById(R.id.RelativeLayout), findViewById(R.id.TextView)};
+    boolean submitAnswer() {
+        RadioButton[] rb = new RadioButton[]{findViewById(R.id.startActivityForResult),
+                findViewById(R.id.startActivityToResult),
+                findViewById(R.id.Bundle), findViewById(R.id.NoneOfTheAbove)};
         if (rb[0].isChecked()) {
             answer0 = true;
             return true;
@@ -100,9 +91,10 @@ public class Question4 extends AppCompatActivity {
         }
         return true;
     }
+
     /**
      * saves the current state of the activity
-     * in this case i will save the value of CheckBoxes
+     * in this case i will save the value of radio buttons
      *
      * @param outState
      */

@@ -10,8 +10,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:padding="15dp">
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/header_initial_padding">
 
         <TextView
             android:id="@+id/logo"
@@ -20,7 +20,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
@@ -28,22 +28,23 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/header_initial_margin_top"
             android:text="@string/_0_of_8_questions_have_been_answered"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_states_text_size" />
 
         <Button
             android:id="@+id/resultButton"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/header_show_result_button_width"
+            android:layout_height="@dimen/header_show_result_button_height"
             android:layout_below="@id/AnswersMessage"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/header_initial_margin_top"
             android:background="@drawable/button"
             android:enabled="false"
+            android:textColor="@color/questionsBackground"
             android:onClick="showResult"
             android:text="@string/show_result"
-            android:textSize="10sp" />
+            android:textSize="@dimen/header_button_text_size" />
 
         <TextView
             android:id="@+id/CurrentQuestion"
@@ -52,24 +53,25 @@
             android:layout_alignBaseline="@+id/continueTest"
             android:layout_alignBottom="@+id/continueTest"
             android:layout_alignParentEnd="true"
-            android:padding="5dp"
+            android:padding="@dimen/header_current_question_padding"
             android:text="question"
             android:visibility="invisible"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_current_question_text_size" />
 
         <Button
             android:id="@+id/continueTest"
-            android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/header_continue_test_button_width"
+            android:layout_height="@dimen/header_continue_test_button_height"
             android:layout_below="@id/AnswersMessage"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/header_initial_margin_top"
             android:layout_toLeftOf="@id/CurrentQuestion"
             android:background="@drawable/button"
-            android:onClick="Continue"
+            android:onClick="continuing"
+            android:textColor="@color/questionsBackground"
             android:visibility="invisible"
             android:text="@string/Continue"
-            android:textSize="10sp" />
+            android:textSize="@dimen/header_button_text_size" />
     </RelativeLayout>
 
     <View
@@ -106,7 +108,7 @@
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:padding="15dp">
+                    android:padding="@dimen/cards_padding">
 
                     <TextView
                         android:id="@+id/card_View_Title1"
@@ -115,7 +117,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider1"
@@ -135,7 +137,7 @@
                         android:padding="10dp"
                         android:text="#1"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:layout_width="wrap_content"
@@ -143,9 +145,9 @@
                         android:layout_alignBottom="@+id/textView1"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
-                        android:onClick="StartTest"
-                        android:text="@string/start"
-                        android:textSize="10dp" />
+                        android:onClick="startTest"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/start" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -166,7 +168,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="15dp">
+                    android:padding="@dimen/cards_padding">
 
                     <TextView
                         android:id="@+id/card_View_Title2"
@@ -175,7 +177,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider2"
@@ -195,7 +197,7 @@
                         android:padding="10dp"
                         android:text="#2"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question2Button"
@@ -205,9 +207,10 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion2"
+                        android:onClick="startQuestion2"
+                        android:textColor="@color/questionsBackground"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+/>
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -215,9 +218,6 @@
                 android:id="@+id/question3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="19dp"
                 android:background="@color/colorAccent"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="3dp"
@@ -270,9 +270,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion3"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:onClick="startQuestion3"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -332,9 +332,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion4"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:onClick="startQuestion4"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -394,9 +394,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion5"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground"
+                        android:onClick="startQuestion5"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -456,9 +456,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion6"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:onClick="startQuestion6"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/Next" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -519,9 +519,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion7"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:onClick="startQuestion7"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/Next" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -582,9 +582,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonnext"
                         android:enabled="false"
-                        android:onClick="StartQuestion8"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:onClick="startQuestion8"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 

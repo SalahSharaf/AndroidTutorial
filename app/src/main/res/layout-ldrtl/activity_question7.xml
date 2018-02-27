@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question1">
+    tools:context="com.example.android.androidtutorial.Question1Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
             android:layout_below="@id/logo"
             android:background="@drawable/button"
             android:text="@string/Home"
-            android:onClick="GoHome"
+            android:onClick="goHome"
             android:textSize="10sp"/>
     </RelativeLayout>
     <View
@@ -60,7 +60,7 @@
             android:orientation="vertical"
             android:id="@+id/QuestionBackground"
             android:gravity="center_vertical"
-            android:background="@color/quetionsBackground"
+            android:background="@color/questionsBackground"
             android:padding="10dp">
 
             <TextView
@@ -105,13 +105,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="@string/Next"
-            android:onClick="Next"
+            android:onClick="next"
             android:background="@drawable/buttonprevious"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/previous"
-            android:onClick="Back"
+            android:onClick="back"
             android:background="@drawable/buttonnext"/>
     </RelativeLayout>
 </RelativeLayout>

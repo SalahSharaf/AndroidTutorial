@@ -17,15 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Question1" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question2" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question3" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question4" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question5" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question6" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question8" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Question7" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Results" android:windowSoftInputMode="adjustResize"></activity>
+        <activity android:name=".Question1Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question2Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question3Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question4Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question5Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question6Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question8Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Question7Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ResultsActivity" android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>

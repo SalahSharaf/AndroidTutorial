@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:padding="15dp">
 
         <TextView
@@ -39,6 +39,7 @@
             android:layout_height="40dp"
             android:layout_below="@id/AnswersMessage"
             android:layout_marginTop="10dp"
+            android:textColor="@color/questionsBackground"
             android:background="@drawable/button"
             android:enabled="false"
             android:onClick="showResult"
@@ -54,8 +55,9 @@
             android:layout_alignParentEnd="true"
             android:padding="5dp"
             android:text="question"
+            android:visibility="invisible"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_question_text_size" />
 
         <Button
             android:id="@+id/continueTest"
@@ -65,10 +67,11 @@
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/CurrentQuestion"
             android:background="@drawable/button"
-            android:enabled="false"
-            android:onClick="Continue"
+            android:visibility="invisible"
+            android:textColor="@color/questionsBackground"
+            android:onClick="continuing"
             android:text="@string/Continue"
-            android:textSize="10sp" />
+            android:textSize="@dimen/header_button_text_size" />
     </RelativeLayout>
 
     <View
@@ -142,9 +145,9 @@
                         android:layout_alignBottom="@+id/textView1"
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
-                        android:onClick="StartTest"
-                        android:text="@string/start"
-                        android:textSize="10dp" />
+                        android:onClick="startTest"
+                        android:textColor="@color/questionsBackground"
+                        android:text="@string/start" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -204,9 +207,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion2"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground"
+                        android:onClick="startQuestion2"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -269,9 +272,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion3"
-                        android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground"
+                        android:onClick="startQuestion3"
+                        android:text="@string/Next" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -327,13 +330,14 @@
                         android:id="@+id/question4Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignBottom="@+id/textView4"
+                        android:layout_alignParentBottom="true"
                         android:layout_alignParentEnd="true"
+                        android:layout_marginBottom="45dp"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion4"
+                        android:onClick="startQuestion4"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -393,9 +397,9 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion5"
+                        android:onClick="startQuestion5"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground" />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -455,9 +459,10 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion6"
+                        android:onClick="startQuestion6"
+                        android:textColor="@color/questionsBackground"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+                         />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -518,9 +523,10 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion7"
+                        android:onClick="startQuestion7"
+                        android:textColor="@color/questionsBackground"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+                         />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -581,9 +587,10 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/buttonprevious"
                         android:enabled="false"
-                        android:onClick="StartQuestion8"
+                        android:onClick="startQuestion8"
                         android:text="@string/Next"
-                        android:textSize="10dp" />
+                        android:textColor="@color/questionsBackground"
+                         />
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 

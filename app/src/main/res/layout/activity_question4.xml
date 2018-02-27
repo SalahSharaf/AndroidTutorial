@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.androidtutorial.Question1">
+    tools:context="com.example.android.androidtutorial.Question1Activity">
 
     <RelativeLayout
+        android:id="@+id/Header1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/Header1"
+        android:background="@color/colorPrimary"
         android:padding="15dp">
 
         <TextView
@@ -27,90 +27,114 @@
             android:id="@+id/AnswersMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
+            android:layout_alignBaseline="@+id/button5"
+            android:layout_alignBottom="@+id/button5"
+            android:layout_alignParentEnd="true"
             android:text="@string/question_4"
             android:textColor="@color/colorAccent"
             android:textSize="14sp" />
+
         <Button
+            android:id="@+id/button5"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:layout_below="@id/logo"
+            android:layout_marginTop="@dimen/header_initial_margin_top"
             android:background="@drawable/button"
+            android:onClick="goHome"
             android:text="@string/Home"
-            android:onClick="GoHome"
-            android:textSize="10sp"/>
+            android:textSize="10sp" />
     </RelativeLayout>
+
     <View
+        android:id="@+id/Header2"
         android:layout_width="match_parent"
         android:layout_height="10dp"
-        android:id="@+id/Header2"
         android:layout_below="@id/Header1"
         android:background="@color/colorPrimaryLight" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:fillViewport="true"
+        android:layout_above="@id/Footer"
         android:layout_below="@id/Header2"
-        android:layout_above="@id/Footer">
+        android:fillViewport="true">
+
         <LinearLayout
+            android:id="@+id/QuestionBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/QuestionBackground"
+            android:background="@color/questionsBackground"
             android:gravity="center_vertical"
-            android:background="@color/quetionsBackground"
-            android:padding="10dp">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:background="@color/colorPrimaryLight"
+                android:padding="@dimen/questions_initial_padding"
                 android:text="@string/choose_the_view_groups_from_the_options_below"
-                android:textColor="#000000"/>
-            <CheckBox
-                android:layout_width="wrap_content"
+                android:textColor="@color/questionsBackground"
+                android:textSize="@dimen/question_header_text_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:id="@+id/LinearLayout"
-                android:text="@string/linearlayout"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ImageView"
-                android:text="@string/imageview"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:id="@+id/RelativeLayout"
-                android:layout_height="wrap_content"
-                android:text="@string/relativelayout"/>
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:id="@+id/TextView"
-                android:layout_height="wrap_content"
-                android:text="@string/textview"/>
+                android:padding="@dimen/questions_initial_padding"
+                android:layout_marginTop="@dimen/question_content_margin_top"
+                android:orientation="vertical"
+                android:background="@color/colorPrimaryLight">
+
+                <CheckBox  android:textColor="@color/questionsBackground"
+                    android:id="@+id/LinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/linearlayout" />
+
+                <CheckBox  android:textColor="@color/questionsBackground"
+                    android:id="@+id/ImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/imageview" />
+
+                <CheckBox  android:textColor="@color/questionsBackground"
+                    android:id="@+id/RelativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/relativelayout" />
+
+                <CheckBox  android:textColor="@color/questionsBackground"
+                    android:id="@+id/TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/textview" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <RelativeLayout
+        android:id="@+id/Footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/Footer"
         android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
         android:padding="10dp">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:background="@drawable/buttonnext"
+            android:onClick="next"
             android:text="@string/Next"
-            android:onClick="Next"
-            android:background="@drawable/buttonnext"/>
+            android:textColor="@color/questionsBackground" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/buttonprevious"
+            android:onClick="back"
             android:text="@string/previous"
-            android:onClick="Back"
-            android:background="@drawable/buttonprevious"/>
+            android:textColor="@color/questionsBackground" />
     </RelativeLayout>
 </RelativeLayout>
