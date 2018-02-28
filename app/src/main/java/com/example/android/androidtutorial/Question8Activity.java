@@ -65,10 +65,11 @@ public class Question8Activity extends AppCompatActivity {
      *
      * @return true or false
      */
+
     boolean submitAnswer() {
         EditText text = findViewById(R.id.AnsweringArea4);
         String value = text.getText().toString();
-        if (value.replaceAll("\\s", "").equals("")) {
+        if (value.trim().replaceAll("\\s", "").equals("")) {
             return false;
         } else {
             answer = value;
@@ -92,6 +93,7 @@ public class Question8Activity extends AppCompatActivity {
      *
      * @param outState
      */
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("answer", answer);

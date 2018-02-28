@@ -240,7 +240,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider3"
@@ -260,7 +260,7 @@
                         android:padding="10dp"
                         android:text="#3"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question3Button"
@@ -302,7 +302,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider4"
@@ -322,7 +322,7 @@
                         android:padding="10dp"
                         android:text="#4"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question4Button"
@@ -397,6 +397,7 @@
                         android:textColor="@color/questionsBackground"
                         android:onClick="startQuestion5"
                         android:text="@string/Next" />
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -426,7 +427,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider6"
@@ -446,7 +447,7 @@
                         android:padding="10dp"
                         android:text="#6"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question6Button"
@@ -489,7 +490,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider7"
@@ -509,7 +510,7 @@
                         android:padding="10dp"
                         android:text="#7"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question7Button"
@@ -552,7 +553,7 @@
                         android:fontFamily="casual"
                         android:text="@string/android_tutorial"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="12sp" />
+                        android:textSize="@dimen/cards_header_text_size" />
 
                     <View
                         android:id="@+id/devider8"
@@ -572,7 +573,7 @@
                         android:padding="10dp"
                         android:text="#8"
                         android:textColor="@color/colorAccent"
-                        android:textSize="40sp" />
+                        android:textSize="@dimen/cards_logo_text_size" />
 
                     <Button
                         android:id="@+id/question8Button"

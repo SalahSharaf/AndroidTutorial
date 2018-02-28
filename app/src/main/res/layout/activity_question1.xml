@@ -21,7 +21,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
@@ -32,7 +32,8 @@
             android:layout_marginTop="10dp"
             android:text="@string/question_1"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_current_question_text_size" />
+
     </RelativeLayout>
 
     <View
@@ -102,7 +103,7 @@
         android:background="@color/colorPrimary"
         android:id="@+id/Footer"
         android:layout_alignParentBottom="true"
-        android:padding="10dp">
+        android:padding="@dimen/bottom_initial_padding">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,6 +112,7 @@
             android:onClick="next"
             android:textColor="@color/questionsBackground"
             android:background="@drawable/buttonnext"/>
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

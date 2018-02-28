@@ -17,6 +17,7 @@ public class Question5Activity extends AppCompatActivity {
      * and increase currentQuestion variable by one and enable this question button in the main activity by enabling btnEnabled variable in the main activity
      * @param savedInstanceState
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class Question5Activity extends AppCompatActivity {
      *
      * @param view
      */
+
     public void goHome(View view) {
         Intent activity = new Intent(this, MainActivity.class);
         startActivity(activity);
@@ -47,6 +49,7 @@ public class Question5Activity extends AppCompatActivity {
      *
      * @param view
      */
+
     public void next(View view) {
         String rightanswer = "TextView text=findViewById(R.id.TextView);\nString value;\ntext.setText(value);";
         if (submitAnswer()) {
@@ -74,10 +77,11 @@ public class Question5Activity extends AppCompatActivity {
      *
      * @return
      */
+
     boolean submitAnswer() {
         EditText text = (EditText) findViewById(R.id.AnsweringArea2);
         String value = text.getText().toString();
-        if (value.replaceAll("\\s","").equals("")) {
+        if (value.trim().replaceAll("\\s","").equals("")) {
             return false;
         } else {
             answer = value;
@@ -91,6 +95,7 @@ public class Question5Activity extends AppCompatActivity {
      *
      * @param outState
      */
+
     @Override
     public void onSaveInstanceState(Bundle outState) {
         outState.putString("answer", answer);

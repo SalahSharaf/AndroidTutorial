@@ -40,6 +40,7 @@
             android:background="@drawable/button"
             android:text="@string/Home"
             android:onClick="goHome"
+            android:textColor="@color/questionsBackground"
             android:layout_marginTop="@dimen/header_initial_margin_top"
             android:textSize="10sp"
             android:id="@+id/button4" />

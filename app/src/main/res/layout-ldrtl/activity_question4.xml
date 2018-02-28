@@ -11,7 +11,7 @@
         android:id="@+id/Header1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:padding="15dp">
 
         <TextView
@@ -21,18 +21,18 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/logo"
-            android:layout_marginTop="10dp"
+            android:layout_alignBaseline="@+id/button13"
+            android:layout_alignBottom="@+id/button13"
+            android:layout_alignParentEnd="true"
             android:text="@string/question_4"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_question_text_size" />
 
         <Button
             android:layout_width="70dp"
@@ -40,8 +40,10 @@
             android:layout_below="@id/logo"
             android:background="@drawable/button"
             android:onClick="goHome"
+            android:layout_marginTop="@dimen/header_initial_margin_top"
             android:text="@string/Home"
-            android:textSize="10sp" />
+            android:textSize="10sp"
+            android:id="@+id/button13" />
     </RelativeLayout>
 
     <View
@@ -119,7 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorPrimary"
         android:padding="10dp">
 
         <Button
@@ -127,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:background="@drawable/buttonprevious"
+            android:textColor="@color/questionsBackground"
             android:onClick="next"
             android:text="@string/Next" />
 
@@ -134,6 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/buttonnext"
+            android:textColor="@color/questionsBackground"
             android:onClick="back"
             android:text="@string/previous" />
     </RelativeLayout>

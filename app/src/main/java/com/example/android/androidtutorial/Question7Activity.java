@@ -31,7 +31,7 @@ public class Question7Activity extends AppCompatActivity {
             rb[2].setChecked(savedInstanceState.getBoolean("answer2"));
             rb[3].setChecked(savedInstanceState.getBoolean("answer3"));
         }
-        MainActivity.currentQuestion=7;
+        MainActivity.currentQuestion = 7;
         MainActivity.btnEnabled[5] = true;
     }
 
@@ -55,7 +55,7 @@ public class Question7Activity extends AppCompatActivity {
      */
     public void next(View view) {
         if (submitAnswer()) {
-            if (answer0 && answer2) {
+            if (answer0 == true && answer2 == true) {
                 MainActivity.rightAnswer[6] = true;
             }
             Intent activity = new Intent(this, Question8Activity.class);

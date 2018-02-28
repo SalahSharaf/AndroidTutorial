@@ -20,7 +20,7 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="@string/android_tutorial"
             android:textColor="@color/colorAccent"
-            android:textSize="18sp" />
+            android:textSize="@dimen/header_logo_text_size" />
 
         <TextView
             android:id="@+id/AnswersMessage"
@@ -31,7 +31,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/_0_of_8_questions_have_been_answered"
             android:textColor="@color/colorAccent"
-            android:textSize="14sp" />
+            android:textSize="@dimen/header_current_question_text_size" />
 
         <Button
             android:id="@+id/resultButton"
@@ -44,7 +44,7 @@
             android:enabled="false"
             android:onClick="showResult"
             android:text="@string/show_result"
-            android:textSize="10sp" />
+            android:textSize="@dimen/header_button_text_size" />
 
         <TextView
             android:id="@+id/CurrentQuestion"
@@ -148,6 +148,7 @@
                         android:onClick="startTest"
                         android:textColor="@color/questionsBackground"
                         android:text="@string/start" />
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 
@@ -210,6 +211,7 @@
                         android:textColor="@color/questionsBackground"
                         android:onClick="startQuestion2"
                         android:text="@string/Next" />
+
                 </RelativeLayout>
             </android.support.v7.widget.CardView>
 

@@ -35,6 +35,7 @@ public class ResultsActivity extends AppCompatActivity {
         typingTask();
         MainActivity.continueTest = false;
         MainActivity.showResult = true;
+        Toast.makeText(this, "Congratulations !\n you have answered "+x+"/8 questions correctly", Toast.LENGTH_LONG).show();
     }
 
     /**
